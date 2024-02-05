@@ -1,0 +1,35 @@
+.container {
+  max-height: 1080px;
+  display: grid;
+  grid-template-columns: 1fr minmax(800px, 5fr) 3fr;
+}
+.blackbox {
+  width: 188px;
+  aspect-ratio: 0.92;
+}
+.avatar {
+  width: 334px;
+  aspect-ratio: 0.75;
+  margin-top: 10%;
+}
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 19%;
+  height: 70%;
+}
+@media (min-width: 1840px) {
+  .blackbox {
+    width: 237px;
+    aspect-ratio: 0.92;
+  }
+  .avatar {
+    width: 517px;
+    aspect-ratio: 0.75;
+    margin-top: 13%;
+  }
+  .centerContainer{
+    margin-top: 22%;
+  }
+}
