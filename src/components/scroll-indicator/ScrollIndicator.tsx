@@ -1,21 +1,47 @@
-"use client";
+import React from "react";
 
-import * as React from "react";
-export default function ScrollIndicator() {
-  const myBarRef = React.useRef(null);
-  function myFunction() {
-    var winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    var height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-  }
-  return (
-    <div className="header">
-      <div className="progress-container">
-        <div className="progress-bar" id="myBar" ref={myBarRef}></div>
-      </div>
-    </div>
-  );
+interface ScrollIndicatorProps {
+  height?: string;
+  bgColor?: string;
 }
+
+const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({
+  height = "5px",
+  bgColor = "#2E2E2E",
+  // @tss-ignore
+  ...props
+}) => {
+  const [scroll, setScroll] = React.useState<number>(0);
+  React.useEffect(() => {
+    let progressBarHandler = () => {
+      const totalScroll: number = document.documentElement.scrollTop;
+      const windowHeight: number =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scroll = `${totalScroll / windowHeight}`;
+      console.log(scroll);
+      // @ts-ignore
+      setScroll((+scroll * 100).toFixed(1));
+    };
+
+    window.addEventListener("scroll", progressBarHandler);
+
+    return () => window.removeEventListener("scroll", progressBarHandler);
+  }, []);
+  return (
+    <div
+      className="scroll_indicator"
+      style={{
+        height: `${height}`,
+        backgroundColor: `${bgColor}`,
+        position: "sticky",
+        top: "0%",
+        left: "0%",
+        width: `${scroll}%`,
+        zIndex: 1000,
+      }}
+    ></div>
+  );
+};
+
+export default ScrollIndicator;
