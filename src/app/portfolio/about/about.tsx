@@ -29,7 +29,7 @@ export default function About() {
         <div className={styles.centerContainer}>
           <div style={{ color: "#2E2E2E", marginLeft: "7%" }}>
             <p style={{ fontSize: 16,color: "#475569", fontWeight: 500 }}>Đồng Công</p>
-            <p className={oswald.className} style={{  fontSize: 102, fontWeight: "bold" }}>
+            <p className={oswald.className} style={{  fontSize: 102, fontWeight: "700" }}>
               CHÍ LINH
             </p>
             <div
