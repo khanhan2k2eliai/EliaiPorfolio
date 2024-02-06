@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
 const oswald = Oswald({ subsets: ["latin"],weight: ['400', '700'] });
