@@ -1,0 +1,38 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(10, 10vw);
+}
+.blackBar {
+  grid-row: 2/7;
+  height: 70%;
+  background-color: #2e2e2e;
+  width: 45px;
+}
+.thumbnail {
+    height: 90%;
+    aspect-ratio: 0.75;
+}
+.more{
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    margin-top: 17%;
+}
+.title{
+    font-size: 68px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+@media (min-width: 1720px) and (min-height: 900px) {
+  .blackBar {
+    width: 65px;
+  }
+  .title{
+    font-size: 104px;
+  }
+  .more{
+    margin-top: 22%;
+}
+}
