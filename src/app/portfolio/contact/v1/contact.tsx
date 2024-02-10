@@ -2,6 +2,7 @@ import * as React from "react";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
+import { motion } from "framer-motion";
 const oswald = Oswald({ subsets: ["latin"], weight: ["500", "700"] });
 
 export default function Contact() {
@@ -32,16 +33,32 @@ export default function Contact() {
               display: "grid",
             }}
           >
-            <div
-             className={styles.blackBar}
-            ></div>
+            <motion.div
+              whileInView={{
+                opacity: [0, 0.75, 1],
+                translateY: [50, 25, 20, 15, 10, 5, 0],
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.02,
+              }}
+              className={styles.blackBar}
+            ></motion.div>
           </div>
-          <img
-           className={styles.thumbnail}
+          <motion.img
+            whileInView={{
+              opacity: [0, 0.75, 1],
+              translateY: [50, 25, 20, 15, 10, 5, 0],
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.02,
+            }}
+            className={styles.thumbnail}
             src={
               "https://s3-alpha-sig.figma.com/img/528d/5a1f/de150e8f9d661d230953a3b696a7bc24?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jWsu~NBhbvMgUOYTc5KqDlDL2iPYpUoaw0Xaz5dK6SSLaT5vmIqWkoIfg6jLfFjudYJbeqGTHjON4NA4AngsoI3WlnkgPIcMmmq3SZWHuLmIBKzOAgpbOauhL7zw68Injnn3A~wH-W9KqjitEMuf0ilSH2oPAzIK3ZgEKU5FmlvYprzNLu5PnZmbVTZdSJLfLRJ8U5B8aMNCzeVhOQ3s0Q69PGlSGxXwo8Vlf93AHv68~kywVmSOpXjeYqahd2cv5B7-iT1YTmSsmcHpEaa9PsVcJB8zdFCyG0fb9Wd2HWc2vE1brr5Gjx3UkzTmX0JIW0i3fKBPlRvoVF8eRGfrkg__"
             }
-          ></img>
+          ></motion.img>
         </div>
       </div>
       <div
@@ -65,16 +82,40 @@ export default function Contact() {
               marginBottom: "2%",
             }}
           >
-            <p
+            <motion.p
+              whileInView={{
+                opacity: [0, 0.75, 1],
+                translateY: [50, 25, 20, 15, 10, 5, 0],
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.02,
+              }}
               className={`${oswald.className} ${styles.title}`}
             >
               Let's talk
-            </p>
-            <div
+            </motion.p>
+            <motion.div
+              whileInView={{
+                opacity: [0, 0.75, 1],
+                translateY: [50, 25, 20, 15, 10, 5, 0],
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.02,
+              }}
               style={{ width: "25%", height: 5, backgroundColor: "#0F172A" }}
-            ></div>
+            ></motion.div>
           </div>
-          <div
+          <motion.div
+            whileInView={{
+              opacity: [0, 0.75, 1],
+              translateY: [50, 25, 20, 15, 10, 5, 0],
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.02,
+            }}
             style={{
               display: "flex",
               justifyContent: "flex-start",
@@ -109,9 +150,17 @@ export default function Contact() {
               <p style={{ marginBottom: 16 }}>anbuibz66@gmail.com</p>
               <p style={{ textDecoration: "underline" }}>Chi Linh</p>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
             className={styles.more}
+            whileInView={{
+              opacity: [0, 0.75, 1],
+              translateY: [50, 25, 20, 15, 10, 5, 0],
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.02,
+            }}
           >
             <p
               className={oswald.className}
@@ -125,7 +174,7 @@ export default function Contact() {
               Xem thêm các dự án đã làm
             </p>
             <OpenInNewIcon sx={{ fontSize: 30 }}></OpenInNewIcon>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

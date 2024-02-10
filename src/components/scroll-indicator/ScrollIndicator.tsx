@@ -19,7 +19,6 @@ const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
       const scroll = `${totalScroll / windowHeight}`;
-      console.log(scroll);
       // @ts-ignore
       setScroll((+scroll * 100).toFixed(1));
     };

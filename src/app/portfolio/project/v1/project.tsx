@@ -1,6 +1,7 @@
 import * as React from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
+import { motion } from "framer-motion";
 import { Oswald } from "next/font/google";
 const oswald = Oswald({ subsets: ["latin"], weight: ["500", "700"] });
 export default function Project() {
@@ -14,10 +15,18 @@ export default function Project() {
           marginLeft: "12%",
         }}
       >
-        <div
+        <motion.div
           style={{
             color: "#0F172A",
             marginBottom: "2%",
+          }}
+          whileInView={{
+            opacity: [0, 1],
+            translateX: [-100, 0],
+          }}
+          transition={{
+            duration: 2,
+            delay: 0.02,
           }}
         >
           <p
@@ -33,7 +42,7 @@ export default function Project() {
           <div
             style={{ width: "26%", height: 5, backgroundColor: "#0F172A" }}
           ></div>
-        </div>
+        </motion.div>
         <div
           style={{
             width: "100%",
@@ -43,13 +52,31 @@ export default function Project() {
             gridTemplateRows: "repeat(6,13vh)",
           }}
         >
-          <img
+          <motion.img
+            whileInView={{
+              opacity: [0, 1],
+              translateX: [-100, 0],
+            }}
+            transition={{
+              duration: 2,
+              delay: 0.02,
+            }}
             className={styles.floatImage}
             src={
               "https://s3-alpha-sig.figma.com/img/6b50/5ac0/7a3dfc1ff1cdac614c251ef1d1d9f44e?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=otupfk5eLQnuMRj08YdnX0dJwI1rgUsnZZ0-9YpPk9p1SYrLJ9QLiGuH8usKz6JH~E1AMbJUqiYvoH0~fgoq0-a7ICkC9KBm0a7mCSgZIT3mMAVWiCCBRoT2cSnaBNOPa0NULt-0FR3DOtJJ69PfRWjSWATEMerN1hjWrpKzIC7HpyDPXUeRwQQIkxrqiqp5Bx51uFPA~-MKKW807vmGh-PLBpfZ2UKyPFHWbfcMAbjBtM6y73W7dDasQh3R863LI-u3PRzcaL6bBZjRSOYL7zni2P4RPG0Khs3j2NAhLMmREgrFiSlkzAE~gAcuJ~WrNVR9qCyJClM6DOe4itjbiA__"
             }
-          ></img>
-          <div className={styles.floatElement}>
+          ></motion.img>
+          <motion.div
+            className={styles.floatElement}
+            whileInView={{
+              opacity: [0, 1],
+              translateX: [100, 0],
+            }}
+            transition={{
+              duration: 2,
+              delay: 0.02,
+            }}
+          >
             {/* <div className={styles.floatText}>
               <div
                 style={{
@@ -98,7 +125,7 @@ export default function Project() {
               ở trung tâm thành phố, kết hợp giữa kiến trúc hiện đại và mang đậm
               yếu tố văn hóa địa phương.
             </p>
-          </div>
+          </motion.div>
         </div>
         {/* <div
           style={{
