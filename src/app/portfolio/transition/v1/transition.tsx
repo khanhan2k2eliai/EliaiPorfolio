@@ -7,9 +7,6 @@ import transition2 from "../../../../../public/transition2.png";
 import { motion } from "framer-motion";
 import { Ref } from "react";
 export default function Transition() {
-  const trans1Ref = React.useRef<HTMLImageElement>(null);
-  const transRef = React.useRef<HTMLImageElement>(null);
-  const trans2Ref = React.useRef<HTMLImageElement>(null);
   const TransitionImage = React.forwardRef(
     (props, ref: Ref<HTMLImageElement | null>) => (
       <Image

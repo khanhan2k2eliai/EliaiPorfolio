@@ -58,10 +58,10 @@ export default function AboutV2() {
             >
               Đồng Công
             </motion.p>
-            <motion.p
+            {/* <motion.p
               whileInView={{
                 opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
+                translateY: [ '100%','0%'],
               }}
               transition={{
                 duration: 0.6,
@@ -70,19 +70,21 @@ export default function AboutV2() {
               className={`${oswald.className} ${styles.name}`}
             >
               CHÍ LINH
-            </motion.p>
+            </motion.p> */}
+            <TextSpliter value="CHÍ LINH" style={{}} className={`${oswald.className} ${styles.name}`}></TextSpliter>
             <motion.div
               style={{
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "flex-start",
+                width:'100%'
               }}
             >
               <motion.div
                 whileInView={{
-                  opacity: [0, 0.75, 1],
-                  translateY: [50, 25, 20, 15, 10, 5, 0],
+                  opacity: [0, 1],
+                  translateY: ['100%','0%'],
                 }}
                 transition={{
                   duration: 0.6,
@@ -91,15 +93,15 @@ export default function AboutV2() {
                 style={{ width: "40%", height: 4, backgroundColor: "#2E2E2E" }}
               ></motion.div>
               <motion.p
-                whileInView={{
-                  opacity: [0, 0.75, 1],
-                  translateY: [50, 25, 20, 15, 10, 5, 0],
-                }}
+               whileInView={{
+                opacity: [0, 1],
+                translateY: ['100%','0%'],
+              }}
                 transition={{
                   duration: 0.6,
                   delay: 0.02,
                 }}
-                style={{ marginLeft: "2%", fontSize: 24, fontWeight: 200,color:'#0F172A' }}
+                style={{ marginLeft: "2%", fontSize: 22, fontWeight: 200,color:'#0F172A' }}
               >
                 KIẾN TRÚC SƯ
               </motion.p>
@@ -108,10 +110,10 @@ export default function AboutV2() {
           <div style={{ color: "#2E2E2E", marginLeft: "7%" }}>
             <motion.p
             style={{fontSize:20,fontWeight:'700'}}
-              whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
-              }}
+            whileInView={{
+              opacity: [0, 1],
+              translateY: ['100%','0%'],
+            }}
               transition={{
                 duration: 0.6,
                 delay: 0.02,
@@ -121,8 +123,8 @@ export default function AboutV2() {
             </motion.p>
             <motion.p
               whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
+                opacity: [0, 1],
+                translateY: ['100%','0%'],
               }}
               transition={{
                 duration: 0.6,
