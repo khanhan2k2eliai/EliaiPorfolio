@@ -2,70 +2,50 @@
   width: 100vw;
   height: 100vh;
 }
-.FfloatElement {
-  background-color: #ffffff;
-  grid-column: 5/10;
-  grid-row: 4/7;
-  margin-left: 10%;
-}
-.FfloatElement .floatText {
-  font-size: 15px;
-  line-height: 18px;
-  padding-top: 6%;
-  padding-left: 6%;
-  max-width: 80%;
-  text-align: justify;
-}
 .floatElement {
-  background-color: #ffffff;
-  grid-column: 6/10;
-  grid-row: 4/7;
-  margin-left: 10%;
+  width: 35%;
 }
 .floatElement .floatText {
   font-size: 15px;
   line-height: 18px;
   padding-top: 6%;
   padding-left: 6%;
-  max-width: 60%;
+  padding-bottom: 6%;
+  max-width: 65%;
   text-align: justify;
 }
-.floatImage {
-  height: 95%;
-  aspect-ratio: 2;
-  grid-column: 1/7;
-  grid-row: 1/7;
+.FfloatElement {
+  width: 45%;
+}
+.FfloatElement .floatText {
+  font-size: 15px;
+  line-height: 18px;
+  padding-top: 6%;
+  padding-left: 6%;
+  padding-bottom: 6%;
+  max-width: 88%;
+  text-align: justify;
+}
+.name{
+  font-size: 32px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 4%;
 }
 @media (min-width: 1720px) {
   .floatElement {
     background-color: #ffffff;
-    grid-column: 7/10;
-    grid-row: 4/7;
+    width: 35%;
+
   }
   .floatElement .floatText {
     font-size: 18px;
     line-height: 24px;
-    padding-top: 10%;
+    padding-top: 8%;
     padding-left: 11%;
-    max-width: 77%;
+    max-width:70%;
   }
-  .floatImage {
-    height: 99%;
-    aspect-ratio: 1.75;
-    grid-row: 1/7;
-  }
-  .FfloatElement {
-    background-color: #ffffff;
-    grid-column: 5/10;
-    grid-row: 5/7;
-    margin-left: 10%;
-  }
-  .FfloatElement .floatText {
-    font-size: 15px;
-    line-height: 18px;
-    padding-top: 6%;
-    padding-left: 6%;
-    max-width: 80%;
-    text-align: justify;
+  .name{
+    font-size: 40px;
   }
 }

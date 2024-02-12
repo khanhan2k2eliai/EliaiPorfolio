@@ -11,19 +11,59 @@ import Project from "./project/v1/project";
 import Contact from "./contact/v1/contact";
 import ProjectV2 from "./project/v2/project";
 import ContactV2 from "./contact/v2/contact";
+import { portfolio } from "@/api/portfolio/portfolios";
 export default function Portfolio() {
   return (
-    <div>
-        {/* <About></About> */}
-        <AboutV2></AboutV2>
-        {/* <Experience></Experience> */}
-        <ExperienceV2></ExperienceV2>
-        {/* <Transition></Transition> */}
-        <TransitionV2></TransitionV2>
-        {/* <Project></Project> */}
-        <ProjectV2></ProjectV2>
-        {/* <Contact></Contact> */}
-        <ContactV2></ContactV2>
-    </div>
+    <>
+      {portfolio.template_option == 1 && (
+        <div style={{ backgroundColor: portfolio.main_color + "10" }}>
+          <About
+            infor={{
+              name: portfolio.full_name,
+              career: portfolio.career,
+              introduction: portfolio.introduction,
+              avatar: portfolio.users.avatar,
+              main_color: portfolio.main_color,
+            }}
+          ></About>
+          <Experience
+            workExperiences={portfolio.work_experience}
+            main_color={portfolio.main_color}
+          ></Experience>
+          <Transition main_color={portfolio.main_color}></Transition>
+          {portfolio.projects.map((project, index) => {
+            return (
+              <Project
+                key={project.id}
+                index={index + 1}
+                main_color={portfolio.main_color}
+                infor={{
+                  name: project.name,
+                  thumbnail: project.thumbnail,
+                  introduction: project.introdution,
+                }}
+              ></Project>
+            );
+          })}
+          <Contact
+            infor={{
+              phone: portfolio.phone,
+              email: portfolio.email,
+              facebook: portfolio.facebook_link,
+              name: portfolio.full_name,
+            }}
+          ></Contact>
+        </div>
+      )}
+      {portfolio.template_option == 2 && (
+        <div>
+          <AboutV2></AboutV2>
+          <ExperienceV2></ExperienceV2>
+          <TransitionV2></TransitionV2>
+          <ProjectV2></ProjectV2>
+          <ContactV2></ContactV2>
+        </div>
+      )}
+    </>
   );
 }

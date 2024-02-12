@@ -3,9 +3,35 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
 import { motion } from "framer-motion";
+import TextSpliter from "@/components/text-spliter/TextSpliter";
 const oswald = Oswald({ subsets: ["latin"], weight: ["500", "700"] });
 
-export default function Contact() {
+interface contactProps {
+  infor: {
+    phone: string;
+    email: string;
+    facebook: string;
+    name: string;
+  };
+}
+export default function Contact(props: contactProps) {
+  const list = {
+    visible: {
+      transition: { when: "beforeChildren", staggerChildren: 0.2 },
+      opacity: 1,
+    },
+    hidden: { opacity: 0 },
+  };
+
+  const item = {
+    visible: {
+      opacity: 1,
+      translateY: ["30%", "0%"],
+      duration: 0.2,
+      delay: 0.02,
+    },
+    hidden: { opacity: 0 },
+  };
   return (
     <div className={styles.container}>
       <div
@@ -35,8 +61,8 @@ export default function Contact() {
           >
             <motion.div
               whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
+                opacity: [0, 1],
+                translateY: ["30%", "0%"],
               }}
               transition={{
                 duration: 0.6,
@@ -47,8 +73,8 @@ export default function Contact() {
           </div>
           <motion.img
             whileInView={{
-              opacity: [0, 0.75, 1],
-              translateY: [50, 25, 20, 15, 10, 5, 0],
+              opacity: [0, 1],
+              translateY: ["30%", "0%"],
             }}
             transition={{
               duration: 0.6,
@@ -82,19 +108,7 @@ export default function Contact() {
               marginBottom: "2%",
             }}
           >
-            <motion.p
-              whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.02,
-              }}
-              className={`${oswald.className} ${styles.title}`}
-            >
-              Let's talk
-            </motion.p>
+            <TextSpliter value="Let's talk" className={`${oswald.className} ${styles.title}`} style={{}}></TextSpliter>
             <motion.div
               whileInView={{
                 opacity: [0, 0.75, 1],
@@ -122,7 +136,10 @@ export default function Contact() {
               alignItems: "center",
             }}
           >
-            <div
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={list}
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -132,11 +149,18 @@ export default function Contact() {
                 color: "#2E2E2E",
               }}
             >
-              <p style={{ marginBottom: 16 }}>SDT</p>
-              <p style={{ marginBottom: 16 }}>Email</p>
-              <p>Facebook</p>
-            </div>
-            <div
+              <motion.p style={{ marginBottom: 16 }} variants={item}>
+                SDT
+              </motion.p>
+              <motion.p style={{ marginBottom: 16 }} variants={item}>
+                Email
+              </motion.p>
+              <motion.p variants={item}>Facebook</motion.p>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={list}
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -146,10 +170,16 @@ export default function Contact() {
                 color: "#2E2E2E",
               }}
             >
-              <p style={{ marginBottom: 16 }}>0797043481</p>
-              <p style={{ marginBottom: 16 }}>anbuibz66@gmail.com</p>
-              <p style={{ textDecoration: "underline" }}>Chi Linh</p>
-            </div>
+              <motion.p style={{ marginBottom: 16 }} variants={item}>
+                {props.infor.phone}
+              </motion.p>
+              <motion.p style={{ marginBottom: 16 }} variants={item}>
+                {props.infor.email}
+              </motion.p>
+              <motion.p style={{ textDecoration: "underline" }} variants={item}>
+                {props.infor.name}
+              </motion.p>
+            </motion.div>
           </motion.div>
           <motion.div
             className={styles.more}
@@ -162,17 +192,16 @@ export default function Contact() {
               delay: 0.02,
             }}
           >
-            <p
-              className={oswald.className}
+            <TextSpliter
+              value="Xem thêm các dự án đã làm"
+              className=""
               style={{
                 fontSize: 20,
                 fontWeight: "500",
                 textTransform: "uppercase",
                 marginRight: "1%",
               }}
-            >
-              Xem thêm các dự án đã làm
-            </p>
+            ></TextSpliter>
             <OpenInNewIcon sx={{ fontSize: 30 }}></OpenInNewIcon>
           </motion.div>
         </div>

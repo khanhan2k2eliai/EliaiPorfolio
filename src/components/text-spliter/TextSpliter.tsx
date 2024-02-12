@@ -22,7 +22,7 @@ export default function TextSpliter(props: TextProps) {
   const item = {
     visible: {
       opacity: 1,
-      translateY: ["100%", "0%"],
+      translateY: ["30%", "0%"],
       duration: 0.2,
       delay: 0.02,
     },
@@ -33,7 +33,7 @@ export default function TextSpliter(props: TextProps) {
       initial="hidden"
       whileInView="visible"
       variants={list}
-      style={{ display: "block", position: "relative" }}
+      style={{ display: "block", position: "relative" ,width:'50%'}}
     >
       {props.value.replaceAll(" "," \xa0").split(" ").map(function (char, index) {
         return (
@@ -41,7 +41,7 @@ export default function TextSpliter(props: TextProps) {
             {props.className != "" && (
               <motion.span
                 variants={item}
-                key={index}
+                key={index+props.className}
                 className={`${oswald.className} ${props.className} ${styles.textSplit}`}
               >
                 {`${char}` }
@@ -51,7 +51,8 @@ export default function TextSpliter(props: TextProps) {
             (
               <motion.span
                 variants={item}
-                key={index}
+                key={index+props.style}
+                className={`${oswald.className}`}
                 style={{
                   ...props.style,
                   display:'inline-block',

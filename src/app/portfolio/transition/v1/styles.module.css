@@ -6,3 +6,15 @@
     justify-content: space-between;
     overflow-x: hidden;
 }
+.header {
+    font-size: 92px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+  }
+@media (min-width: 1840px) {
+  .header {
+    font-size: 128px;
+    font-weight: 400;
+  }
+}
