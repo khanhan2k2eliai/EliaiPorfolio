@@ -33,7 +33,7 @@ export default function TextSpliter(props: TextProps) {
       initial="hidden"
       whileInView="visible"
       variants={list}
-      style={{ display: "block", position: "relative" ,width:'50%'}}
+      style={{ display: "block", position: "relative" ,width:'100%'}}
     >
       {props.value.replaceAll(" "," \xa0").split(" ").map(function (char, index) {
         return (

@@ -7,9 +7,48 @@ const oswald = Oswald({
   subsets: ["latin"],
   weight: ["200", "400", "500", "700"],
 });
+import TextSpliter from "@/components/text-spliter/TextSpliter";
 import { motion, useAnimationFrame } from "framer-motion";
 
-export default function ExperienceV2() {
+interface work_experience {
+  end_at: string;
+  position: string;
+  start_at: string;
+  company_name: string;
+  job_description: string;
+}
+interface experienceProps {
+  workExperiences: Array<work_experience>;
+  main_color: string;
+}
+export default function ExperienceV2(props: experienceProps) {
+  const list = {
+    visible: {
+      translateY: ["5%", "0%"],
+      duration: 1,
+      transition: { when: "beforeChildren", staggerChildren: 0.2 },
+      opacity: 1,
+    },
+    hidden: { opacity: 0 },
+  };
+  const ditem = {
+    visible: {
+      opacity: 1,
+      translateX: ["-2%", "0%"],
+      duration: 0.2,
+      delay: 0.02,
+    },
+    hidden: { opacity: 0 },
+  };
+  const citem = {
+    visible: {
+      opacity: 1,
+      translateX: ["2%", "0%"],
+      duration: 0.2,
+      delay: 0.02,
+    },
+    hidden: { opacity: 0 },
+  };
   return (
     <div className={styles.container}>
       <div
@@ -20,63 +59,91 @@ export default function ExperienceV2() {
           gridColumn: "1/6",
         }}
       >
-        <div style={{ width: "80%", height: "90%",display:'flex', flexDirection:"column",alignItems:'flex-start'}}>
-          <p className={`${oswald.className} ${styles.header}`}>
-            kinh nghiệm làm việc
-          </p>
-          <div
-           className={styles.experienceContainer}
+        <div
+          style={{
+            width: "80%",
+            height: "90%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+          }}
+        >
+          <TextSpliter
+            value={"Kinh Nghiệm Làm Việc"}
+            className={`${oswald.className} ${styles.header}`}
+            style={{}}
+          ></TextSpliter>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={list}
+            className={styles.experienceContainer}
           >
-            {[1, 2, 3,4].map((c) => {
+            {props.workExperiences.map((c, index) => {
               return (
-                <div
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={list}
+                  key={index}
                   style={{
                     display: "flex",
                     justifyContent: "flex-start",
                     width: "100%",
                   }}
                 >
-                  <div
-                    style={{
-                      display: "grid",
-                      gridAutoRows: "auto",
-                      rowGap: "5%",
-                      height: "100%",
-                      borderRight: "1px groove #CBD5E1",
-                      marginRight:'1%'
-                    }}
-                  >
-                    <p style={{ fontWeight: "700",marginRight:30 }}>01/2022 - 12/2023</p>
-                  </div>
-                  <div style={{ display: "grid", rowGap: 15,marginLeft:'1%' }}>
-                    <p style={{ fontSize: 20, fontWeight: "700" }}>
-                      TỔNG GIÁM ĐỐC
+                  <motion.div className={styles.listDate} variants={ditem}>
+                    <p style={{ fontWeight: "700" }}>
+                      {c.start_at} - {c.end_at}
                     </p>
-                    <p style={{ fontSize: 16, fontWeight: "700" }}>
-                      Công ty cổ phần kiến trúc và xây dựng PQR
+                  </motion.div>
+                  <motion.div
+                    variants={citem}
+                    style={{ display: "grid", rowGap: 15, marginLeft: "2%" }}
+                  >
+                    <p
+                      style={{
+                        fontSize: 20,
+                        fontWeight: "700",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {c.position}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: 16,
+                        fontWeight: "700",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      {c.company_name}
                     </p>
                     <ul style={{ color: "#475569", marginLeft: "3%" }}>
-                      <li style={{ marginBottom: 10 }}>
-                        Quản lý và phát triển đội ngũ thiết kế
-                      </li>
-                      <li style={{ marginBottom: 10 }}>
-                        Xây dựng và phát triển thương hiệu công ty
-                      </li>
-                      <li style={{ marginBottom: 10 }}>
-                        Điều hành và giám sát quá trình thiết kế kiến trúc cho
-                        nhiều dự án thương mại và nhà ở.
+                      <li style={{ marginBottom: 10, width: "70%" }}>
+                        {c.job_description}
                       </li>
                     </ul>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className={styles.portfolioContainer}>
+      <motion.div
+        whileInView={{
+          opacity: [0, 1],
+          translateX: ["30%", "0%"],
+        }}
+        transition={{
+          duration: 0.6,
+          delay: 0.02,
+        }}
+        className={styles.portfolioContainer}
+      >
         <p className={styles.portfolio}>experience</p>
-      </div>
+      </motion.div>
     </div>
   );
 }

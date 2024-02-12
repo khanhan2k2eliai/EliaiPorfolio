@@ -6,7 +6,7 @@
   grid-template-rows: repeat(1, 100vh);
 }
 .featured {
-  font-size: 128px;
+  font-size: 138px;
   font-weight: 100;
   line-height: 138px;
   color: #2e2e2e;
@@ -29,7 +29,7 @@
   }
 @media (min-width: 1840px) {
   .featured {
-    font-size: 163px;
+    font-size: 193px;
     font-weight: 100;
     line-height: 138px;
     color: #2e2e2e;

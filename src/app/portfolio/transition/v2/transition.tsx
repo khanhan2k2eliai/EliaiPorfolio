@@ -8,6 +8,7 @@ import union3 from "../../../../../public/union3.png";
 import union4 from "../../../../../public/union4.png";
 import union5 from "../../../../../public/union5.png";
 import Image from "next/image";
+import TextSpliter from "@/components/text-spliter/TextSpliter";
 const oswald = Oswald({
   subsets: ["latin"],
   weight: ["200", "400", "500", "700"],
@@ -17,12 +18,14 @@ const inter = Inter({
   weight: ["100", "200", "400", "500", "700"],
 });
 import { motion, useAnimationFrame } from "framer-motion";
-
-export default function TransitionV2() {
+interface transitionProps {
+  main_color: string;
+}
+export default function TransitionV2(props: transitionProps) {
   const TransitionImage = React.forwardRef(
     (props, ref: React.Ref<HTMLImageElement | null>) => (
       <Image
-      ref={ref}
+        ref={ref}
         alt=" "
         src={union1}
         style={{
@@ -37,7 +40,7 @@ export default function TransitionV2() {
   const TransitionImage2 = React.forwardRef(
     (props, ref: React.Ref<HTMLImageElement | null>) => (
       <Image
-      ref={ref}
+        ref={ref}
         alt=" "
         src={union2}
         style={{
@@ -52,7 +55,7 @@ export default function TransitionV2() {
   const TransitionImage3 = React.forwardRef(
     (props, ref: React.Ref<HTMLImageElement | null>) => (
       <Image
-      ref={ref}
+        ref={ref}
         alt=" "
         src={union3}
         style={{
@@ -67,7 +70,7 @@ export default function TransitionV2() {
   const TransitionImage4 = React.forwardRef(
     (props, ref: React.Ref<HTMLImageElement | null>) => (
       <Image
-      ref={ref}
+        ref={ref}
         alt=" "
         src={union4}
         style={{
@@ -82,7 +85,7 @@ export default function TransitionV2() {
   const TransitionImage5 = React.forwardRef(
     (props, ref: React.Ref<HTMLImageElement | null>) => (
       <Image
-      ref={ref}
+        ref={ref}
         alt=" "
         src={union5}
         style={{ height: "84%", aspectRatio: 0.27, alignSelf: "flex-end" }}
@@ -113,15 +116,29 @@ export default function TransitionV2() {
   };
 
   const item = {
-    visible: { opacity: [0, 0.75, 1], translateY: [50, 0] ,duration: 0.6,
-        delay: 0.02},
+    visible: {
+      opacity: [0, 0.75, 1],
+      translateY: [50, 0],
+      duration: 0.6,
+      delay: 0.02,
+    },
     hidden: { opacity: 0 },
   };
   return (
     <div className={styles.container}>
-      <div className={styles.featuredContainer}>
+      <motion.div
+        whileInView={{
+          opacity: [0, 1],
+          translateX: ["-30%", "0%"],
+        }}
+        transition={{
+          duration: 0.6,
+          delay: 0.02,
+        }}
+        className={styles.featuredContainer}
+      >
         <p className={`${styles.featured} ${inter.className}`}>featured</p>
-      </div>
+      </motion.div>
       <div
         style={{
           gridColumn: "2/8",
@@ -150,11 +167,39 @@ export default function TransitionV2() {
               marginLeft: "13%",
             }}
           >
-            <p style={{ fontWeight: "200", fontSize: 30 }}>các</p>
-            <p className={`${styles.header} ${oswald.className}`}>
-              Dự án nổi bật
-            </p>
-            <p style={{ fontWeight: "200", fontSize: 30 }}>Đã làm</p>
+            <motion.p
+              whileInView={{
+                opacity: [0, 1],
+                translateY: ["30%", "0%"],
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.02,
+              }}
+              className={`${oswald.className}`}
+              style={{ fontWeight: "200", fontSize: 30 }}
+            >
+              các
+            </motion.p>
+            <TextSpliter
+              value="Dự án nổi bật"
+              className={`${styles.header} ${oswald.className}`}
+              style={{}}
+            ></TextSpliter>
+            <motion.p
+              whileInView={{
+                opacity: [0, 1],
+                translateY: ["30%", "0%"],
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.02,
+              }}
+              className={`${oswald.className}`}
+              style={{ fontWeight: "200", fontSize: 30 }}
+            >
+              Đã làm
+            </motion.p>
           </div>
           <motion.div
             style={{

@@ -8,7 +8,16 @@ const oswald = Oswald({
 });
 import { motion, useAnimationFrame } from "framer-motion";
 
-export default function ProjectV2() {
+interface projectProps {
+  index: number;
+  main_color: string;
+  infor: {
+    name: string;
+    thumbnail: string;
+    introduction: string;
+  };
+}
+export default function ProjectV2(props: projectProps) {
   return (
     <div className={styles.container}>
       <div
@@ -16,33 +25,48 @@ export default function ProjectV2() {
           width: "93%",
           height: "85%",
           display: "flex",
-          flexDirection:'row-reverse',
+          flexDirection:
+            props.index == 1 || props.index % 2 != 0 ? "row" : "row-reverse",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <div
+        <motion.div
+          whileInView={{
+            opacity: [0, 1],
+            translateX: props.index %2 !=0 ?[-50, 0] : [50,0],
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.02,
+          }}
           style={{
             height: "100%",
             width: "60%",
             display: "flex",
             flexDirection: "column",
-            alignItems: "flex-start",
+            alignItems:
+              props.index == 1 || props.index % 2 != 0
+                ? "flex-end"
+                : "flex-start",
             justifyContent: "flex-end",
+            marginRight: "5%",
           }}
         >
           <div
-            style={{ color: "#2E2E2E", marginRight: "7%", textAlign: "left" }}
+            style={{
+              color: "#2E2E2E",
+              display: "flex",
+              flexDirection: "column",
+              alignItems:
+                props.index == 1 || props.index % 2 != 0
+                  ? "flex-end"
+                  : "flex-start",
+              textAlign:
+                props.index == 1 || props.index % 2 != 0 ? "right" : "left",
+            }}
           >
-            <motion.p
-              whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.02,
-              }}
+            <p
               style={{
                 fontSize: 16,
                 color: "#0F172A",
@@ -51,81 +75,78 @@ export default function ProjectV2() {
               }}
             >
               Dự án
-            </motion.p>
-            <motion.p
-              whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.02,
-              }}
-              className={`${oswald.className} ${styles.header}`}
-            >
+            </p>
+            <p className={`${oswald.className} ${styles.header}`}>
               Vinhomes Ocean park
-            </motion.p>
+            </p>
           </div>
-          <motion.div
-            whileInView={{
-              opacity: [0, 0.75, 1],
-              translateY: [50, 25, 20, 15, 10, 5, 0],
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.02,
-            }}
+          <div
             style={{
               width: "90%",
               height: 4,
               backgroundColor: "#2E2E2E",
               marginTop: "15%",
             }}
-          ></motion.div>
-          <motion.p
-            whileInView={{
-              opacity: [0, 0.75, 1],
-              translateY: [50, 25, 20, 15, 10, 5, 0],
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.02,
-            }}
-            style={{fontStyle:'italic',maxWidth:'100%',color:'#475569',textAlign:'left',marginTop:'15%',fontSize:16}}
-          >
-            “Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc
-            đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc hiện đại và
-            yếu tố văn hóa địa phương. Thiết kế này mang lại sự hòa quyện giữa
-            không gian sống hiện đại & bản sắc đặc trưng của cộng đồng. Dự án
-            Residences at Harmony Square là một tác phẩm kiến trúc độc đáo nằm ở
-            trung tâm thành phố.”
-          </motion.p>
-        </div>
-        <div style={{ height: "100%", width: "80%", marginRight: "5%" }}>
-            {/* 88% */}
+          ></div>
+          {(props.index == 1 || props.index % 2 == 0) && (
+            <p
+              style={{
+                fontStyle: "italic",
+                maxWidth: "100%",
+                color: "#475569",
+                textAlign: props.index == 1 ? "right" : "left",
+                marginTop: "15%",
+                fontSize: 16,
+              }}
+            >
+              “Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc
+              đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc hiện đại và
+              yếu tố văn hóa địa phương. Thiết kế này mang lại sự hòa quyện giữa
+              không gian sống hiện đại & bản sắc đặc trưng của cộng đồng. Dự án
+              Residences at Harmony Square là một tác phẩm kiến trúc độc đáo nằm
+              ở trung tâm thành phố.”
+            </p>
+          )}
+        </motion.div>
+        <motion.div
+          whileInView={{
+            opacity: [0, 1],
+            translateX: props.index %2 !=0 ?[50, 0] : [-50,0],
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.02,
+          }}
+          style={{ height: "100%", width: "80%", marginRight: "5%" }}
+        >
+          {/* 88% */}
           <img
-            style={{ height: "100%", aspectRatio: 1.3 }}
+            style={{
+              height: props.index != 1 && props.index % 2 != 0 ? "88%" : "100%",
+              aspectRatio: 1.3,
+            }}
             src="https://s3-alpha-sig.figma.com/img/6b50/5ac0/7a3dfc1ff1cdac614c251ef1d1d9f44e?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=otupfk5eLQnuMRj08YdnX0dJwI1rgUsnZZ0-9YpPk9p1SYrLJ9QLiGuH8usKz6JH~E1AMbJUqiYvoH0~fgoq0-a7ICkC9KBm0a7mCSgZIT3mMAVWiCCBRoT2cSnaBNOPa0NULt-0FR3DOtJJ69PfRWjSWATEMerN1hjWrpKzIC7HpyDPXUeRwQQIkxrqiqp5Bx51uFPA~-MKKW807vmGh-PLBpfZ2UKyPFHWbfcMAbjBtM6y73W7dDasQh3R863LI-u3PRzcaL6bBZjRSOYL7zni2P4RPG0Khs3j2NAhLMmREgrFiSlkzAE~gAcuJ~WrNVR9qCyJClM6DOe4itjbiA__"
           ></img>
-          {/* <motion.p
-            whileInView={{
-              opacity: [0, 0.75, 1],
-              translateY: [50, 25, 20, 15, 10, 5, 0],
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.02,
-            }}
-            style={{fontStyle:'italic',maxWidth:'100%',color:'#475569',textAlign:'left',marginTop:'2%',fontSize:16}}
-          >
-            “Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc
-            đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc hiện đại và
-            yếu tố văn hóa địa phương. Thiết kế này mang lại sự hòa quyện giữa
-            không gian sống hiện đại & bản sắc đặc trưng của cộng đồng. Dự án
-            Residences at Harmony Square là một tác phẩm kiến trúc độc đáo nằm ở
-            trung tâm thành phố.”
-          </motion.p> */}
-        </div>
+          {props.index != 1 && props.index % 2 != 0 && (
+            <p
+              style={{
+                fontStyle: "italic",
+                maxWidth: "100%",
+                color: "#475569",
+                textAlign: "left",
+                marginTop: "2%",
+                fontSize: 16,
+              }}
+            >
+              “Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc
+              đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc hiện đại và
+              yếu tố văn hóa địa phương. Thiết kế này mang lại sự hòa quyện giữa
+              không gian sống hiện đại & bản sắc đặc trưng của cộng đồng. Dự án
+              Residences at Harmony Square là một tác phẩm kiến trúc độc đáo nằm
+              ở trung tâm thành phố.”
+            </p>
+          )}
+        </motion.div>
       </div>
     </div>
   );

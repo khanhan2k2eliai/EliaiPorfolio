@@ -57,11 +57,42 @@ export default function Portfolio() {
       )}
       {portfolio.template_option == 2 && (
         <div>
-          <AboutV2></AboutV2>
-          <ExperienceV2></ExperienceV2>
-          <TransitionV2></TransitionV2>
-          <ProjectV2></ProjectV2>
-          <ContactV2></ContactV2>
+          <AboutV2
+            infor={{
+              name: portfolio.full_name,
+              career: portfolio.career,
+              introduction: portfolio.introduction,
+              avatar: portfolio.users.avatar,
+              main_color: portfolio.main_color,
+            }}
+          ></AboutV2>
+          <ExperienceV2
+            workExperiences={portfolio.work_experience}
+            main_color={portfolio.main_color}
+          ></ExperienceV2>
+          <TransitionV2 main_color={portfolio.main_color}></TransitionV2>
+          {portfolio.projects.map((project, index) => {
+            return (
+              <ProjectV2
+                key={project.id}
+                index={index + 1}
+                main_color={portfolio.main_color}
+                infor={{
+                  name: project.name,
+                  thumbnail: project.thumbnail,
+                  introduction: project.introdution,
+                }}
+              ></ProjectV2>
+            );
+          })}
+          <ContactV2
+            infor={{
+              phone: portfolio.phone,
+              email: portfolio.email,
+              facebook: portfolio.facebook_link,
+              name: portfolio.full_name,
+            }}
+          ></ContactV2>
         </div>
       )}
     </>

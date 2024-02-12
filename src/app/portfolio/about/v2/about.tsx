@@ -5,14 +5,31 @@ import TextSpliter from "@/components/text-spliter/TextSpliter";
 import { motion } from "framer-motion";
 const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
 
-export default function AboutV2() {
+interface aboutProps {
+  infor: {
+    name: string;
+    career: string;
+    introduction: string;
+    avatar: string;
+    main_color: string;
+  };
+}
+export default function AboutV2(props: aboutProps) {
   return (
     <div className={styles.container}>
-      <div
+      <motion.div
+        whileInView={{
+          opacity: [0, 1],
+          translateX: ["-30%", "0%"],
+        }}
+        transition={{
+          duration: 0.6,
+          delay: 0.02,
+        }}
         className={styles.portfolioContainer}
       >
         <p className={styles.portfolio}>portfolio</p>
-      </div>
+      </motion.div>
       <div
         style={{
           gridColumn: "2/4",
@@ -23,15 +40,23 @@ export default function AboutV2() {
           height: "100%",
         }}
       >
-        <div
+        <motion.div
           className={styles.blackLayer}
+          whileInView={{
+            opacity: [0, 1],
+            translateY: ["20%", "0%"],
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.02,
+          }}
         >
           <img
             style={{ height: "90%", aspectRatio: 0.75 }}
             src="https://s3-alpha-sig.figma.com/img/528d/5a1f/de150e8f9d661d230953a3b696a7bc24?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jWsu~NBhbvMgUOYTc5KqDlDL2iPYpUoaw0Xaz5dK6SSLaT5vmIqWkoIfg6jLfFjudYJbeqGTHjON4NA4AngsoI3WlnkgPIcMmmq3SZWHuLmIBKzOAgpbOauhL7zw68Injnn3A~wH-W9KqjitEMuf0ilSH2oPAzIK3ZgEKU5FmlvYprzNLu5PnZmbVTZdSJLfLRJ8U5B8aMNCzeVhOQ3s0Q69PGlSGxXwo8Vlf93AHv68~kywVmSOpXjeYqahd2cv5B7-iT1YTmSsmcHpEaa9PsVcJB8zdFCyG0fb9Wd2HWc2vE1brr5Gjx3UkzTmX0JIW0i3fKBPlRvoVF8eRGfrkg__"
             alt="rectangel1"
           ></img>
-        </div>
+        </motion.div>
       </div>
       <div
         style={{
@@ -45,46 +70,29 @@ export default function AboutV2() {
       >
         <div className={styles.inforContainer}>
           <div style={{ color: "#2E2E2E", marginLeft: "7%" }}>
-            <motion.p
-              whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.02,
-              }}
+            <TextSpliter
+              value="Đồng Công"
+              className=""
               style={{ fontSize: 16, color: "#475569", fontWeight: 500 }}
-            >
-              Đồng Công
-            </motion.p>
-            {/* <motion.p
-              whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [ '100%','0%'],
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.02,
-              }}
+            ></TextSpliter>
+            <TextSpliter
+              value="CHÍ LINH"
+              style={{}}
               className={`${oswald.className} ${styles.name}`}
-            >
-              CHÍ LINH
-            </motion.p> */}
-            <TextSpliter value="CHÍ LINH" style={{}} className={`${oswald.className} ${styles.name}`}></TextSpliter>
+            ></TextSpliter>
             <motion.div
               style={{
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "flex-start",
-                width:'100%'
+                width: "100%",
               }}
             >
               <motion.div
                 whileInView={{
                   opacity: [0, 1],
-                  translateY: ['100%','0%'],
+                  translateY: ["100%", "0%"],
                 }}
                 transition={{
                   duration: 0.6,
@@ -92,52 +100,36 @@ export default function AboutV2() {
                 }}
                 style={{ width: "40%", height: 4, backgroundColor: "#2E2E2E" }}
               ></motion.div>
-              <motion.p
-               whileInView={{
-                opacity: [0, 1],
-                translateY: ['100%','0%'],
-              }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.02,
+              <TextSpliter
+                value={props.infor.career}
+                className=""
+                style={{
+                  marginLeft: "2%",
+                  fontSize: 22,
+                  fontWeight: 200,
+                  color: "#0F172A",
                 }}
-                style={{ marginLeft: "2%", fontSize: 22, fontWeight: 200,color:'#0F172A' }}
-              >
-                KIẾN TRÚC SƯ
-              </motion.p>
+              ></TextSpliter>
             </motion.div>
           </div>
           <div style={{ color: "#2E2E2E", marginLeft: "7%" }}>
-            <motion.p
-            style={{fontSize:20,fontWeight:'700'}}
-            whileInView={{
-              opacity: [0, 1],
-              translateY: ['100%','0%'],
-            }}
-              transition={{
-                duration: 0.6,
-                delay: 0.02,
-              }}
-            >
-              Giới thiệu
-            </motion.p>
+            <TextSpliter
+              value="Giới thiệu"
+              className=""
+              style={{ fontSize: 20, fontWeight: "700" }}
+            ></TextSpliter>
             <motion.p
               whileInView={{
                 opacity: [0, 1],
-                translateY: ['100%','0%'],
+                translateY: ["30%", "0%"],
               }}
               transition={{
-                duration: 0.6,
+                duration: 1,
                 delay: 0.02,
               }}
               className={styles.intro}
             >
-              “Là một kiến trúc sư với 5 năm kinh nghiệm trong lĩnh vực thiết kế
-              kiến trúc. Trải qua nhiều dự án đa dạng, tôi đã phát triển kỹ năng
-              chuyên sâu trong việc tạo ra các không gian sống và làm việc sáng
-              tạo, tích hợp các yếu tố estetica với sự tiện ích và bền vững. Sứ
-              mệnh của tôi là tạo ra những công trình kiến trúc độc đáo và mang
-              lại trải nghiệm tuyệt vời cho người sử dụng.”
+              {props.infor.introduction}
             </motion.p>
           </div>
         </div>
