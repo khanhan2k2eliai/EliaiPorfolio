@@ -1,0 +1,28 @@
+.layout2{
+    width: 90%;
+    height: 95%;
+    display: grid;
+    column-gap: 5%;
+    grid-template-columns: repeat(2,48%);
+    grid-template-rows: repeat(1,100%);
+}
+
+.title{
+    font-weight: 700;
+    font-size: 72px;
+}
+.description{
+    width: 85%;
+    margin-top: 3%;
+    text-align: justify;
+}
+
+@media (min-width:1720px){
+    .title{
+        font-size: 128px;
+    }
+    .description{
+        width: 65%;
+    }
+    
+}

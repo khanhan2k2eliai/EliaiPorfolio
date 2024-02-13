@@ -1,0 +1,7 @@
+.layout1{
+    width: 90%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: repeat(1,100%);
+    grid-template-rows: repeat(10,10%);
+}

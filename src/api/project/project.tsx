@@ -1,3 +1,4 @@
+import { projectSections } from "../project-section/project-section";
 export const projects = [
   {
     id: 1,
@@ -42,3 +43,28 @@ export const projects = [
       "Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc hiện đại và yếu tố văn hóa địa phương. Thiết kế này mang lại sự hòa quyện giữa không gian sống hiện đại và bản sắc đặc trưng của cộng đồng. Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc đáo nằm ở trung tâm thành phố.",
   },
 ];
+
+export const project = {
+  id: 3,
+  name: "Historic roof restoration",
+  thumbnail:
+    "https://s3-alpha-sig.figma.com/img/9e98/3eab/865ddd972e9b6c7ea92aecf7ac11f963?Expires=1708905600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Y~eYE7WcgvC9d6~duatqmXu6huT3sfSUbnnMcdptfw3DF1V3G1QDdGwWg-P0ZEG7BfmwjN6CZqVU5Vyu~5XIMilb1p9KegL3Sj7HZF0S3aiEvKBXc~RUi526Q2D4ik~VELP8LxGL64sUGuDf4MBAioHPnPrRzeJf3AlSAsBrG0KKWN~7P2lMNRUnGgEYE3i7P7OsTXMUvsBotER6DbZ4-MnkGKJmM0TDHYux2-N1CJWpxTQ1vZt2AcQkCCNMyjM84KwpP8-JgMnM5YOg3taEzFTtW2ho0YWB5plMtv-xvAzm~crA9U268U3SbdtIGdglRTMhre~-0TTt61I1SNsAfg__",
+
+  sections: projectSections,
+  information: [
+    {
+      key: "Diện tích",
+      value: "67m2",
+    },
+    {
+      key: "Diện tích",
+      value: "67m2",
+    },
+    {
+      key: "Diện tích",
+      value: "67m2",
+    },
+  ],
+  introdution:
+    "Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc hiện đại và yếu tố văn hóa địa phương. Thiết kế này mang lại sự hòa quyện giữa không gian sống hiện đại và bản sắc đặc trưng của cộng đồng. Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc đáo nằm ở trung tâm thành phố.",
+};
