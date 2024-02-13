@@ -12,7 +12,7 @@ export const portfolio = {
   main_color: "#4F8263",
   users: {
     avatar:
-      "https://s3-alpha-sig.figma.com/img/528d/5a1f/de150e8f9d661d230953a3b696a7bc24?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZWYi-hF0mc-bCg0CEJ~epHwZqx8nWZDN33x~dI5KIhrfWDPf2VncLnnqZ9AM98UuJKd2zIqzy7RP6H43hbwSfIu2T79bNJsua1Paff1GU~V5a5X9Tm1xPkMuvUl6kgg6iIeqYUBf7iQ2seUA0s43vipyqVINQo2JMRVmuoMXr5~Tr51RRxGTXhPF67XIcojfPaunstiCk6RB3658PQJsk4vXsonCrCGJy08eLxgoXsPtCQ6aQQlSD2THqbGROxDsn3EvaFImC-U0w1vzpkUJdAtvEF-jHlk2PMHoylnGIFuj3nKlDal20EY-SHH~8U~IFPFdM~QrnsScTakRhi9I6Q__",
+      "https://s3-alpha-sig.figma.com/img/528d/5a1f/de150e8f9d661d230953a3b696a7bc24?Expires=1708905600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WeiOvSWju~omGCwxW2qpYdiTP39YRZTe7CptL8rctisUnoSy2sVp9HcxQIXoBkWew1IK7lnqIWhvuAmDzXak8Gki0-NDBNTMmr4lW92gYT9B3ZXiGGC2Z~b~vjba420qVgQYPjG~Ef4kqujtD0thNZFLB~-HLxsTFlxRwRVL4UpK7~z5Sv1X7yd3Fhde9U0k6VA5DxOtnx~IYYXUVD6dh3nRlx3CKkYa-16Uq99qihLEbQ8uEaKMk803qV95FUwYXVTxY14Hafag4T3fFo0CElwgjaMIgdd4AZbXpdnGwdXhScQ-aeRyumDrlQuT2xrNad7VOkqN1hP6eFkBSVy8Ag__",
   },
   projects:projects,
   work_experience: [

@@ -51,6 +51,7 @@ export default function Portfolio() {
               email: portfolio.email,
               facebook: portfolio.facebook_link,
               name: portfolio.full_name,
+              avatar:portfolio.users.avatar
             }}
             main_color={portfolio.main_color}
           ></Contact>
@@ -93,6 +94,7 @@ export default function Portfolio() {
               phone: portfolio.phone,
               email: portfolio.email,
               facebook: portfolio.facebook_link,
+              avatar:portfolio.users.avatar,
               name: portfolio.full_name,
             }}
           ></ContactV2>
