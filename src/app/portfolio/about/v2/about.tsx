@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
 import TextSpliter from "@/components/text-spliter/TextSpliter";
 import { motion } from "framer-motion";
+import { splitFullName } from "@/utils/split-fullname";
 const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
 
 interface aboutProps {
@@ -15,6 +16,7 @@ interface aboutProps {
   };
 }
 export default function AboutV2(props: aboutProps) {
+  const { firstName, lastName } = splitFullName(props.infor.name);
   return (
     <div className={styles.container}>
       <motion.div
@@ -71,12 +73,12 @@ export default function AboutV2(props: aboutProps) {
         <div className={styles.inforContainer}>
           <div style={{ color: "#2E2E2E", marginLeft: "7%" }}>
             <TextSpliter
-              value="Đồng Công"
+              value={firstName}
               className=""
               style={{ fontSize: 16, color: "#475569", fontWeight: 500 }}
             ></TextSpliter>
             <TextSpliter
-              value="CHÍ LINH"
+              value={lastName}
               style={{}}
               className={`${oswald.className} ${styles.name}`}
             ></TextSpliter>
