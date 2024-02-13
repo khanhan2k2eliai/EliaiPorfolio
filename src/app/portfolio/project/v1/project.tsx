@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import { motion } from "framer-motion";
 import { Oswald } from "next/font/google";
+import { hexToHSL } from "@/utils/hex-to-hsl";
 const oswald = Oswald({ subsets: ["latin"], weight: ["500", "700"] });
 
 interface projectProps {
@@ -15,6 +16,7 @@ interface projectProps {
   };
 }
 export default function Project(props: projectProps) {
+  const main_hsl =hexToHSL(props.main_color);
   return (
     <div className={styles.container}  >
       <div
@@ -88,7 +90,7 @@ export default function Project(props: projectProps) {
               duration: 2,
               delay: 0.02,
             }}
-            style={{backgroundColor:'hsla(355, 51%, 97%, 1)',zIndex:2}}
+            style={{backgroundColor:`hsla(${main_hsl?.h}, ${main_hsl?.s}%, 97%, 1)`,zIndex:2}}
           >
             {props.index == 1 && (
               <div className={styles.floatText}>
