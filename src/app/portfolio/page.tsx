@@ -52,18 +52,20 @@ export default function Portfolio() {
               facebook: portfolio.facebook_link,
               name: portfolio.full_name,
             }}
+            main_color={portfolio.main_color}
           ></Contact>
         </div>
       )}
       {portfolio.template_option == 2 && (
-        <div>
+        <div  style={{ backgroundColor: portfolio.main_color + "10" }}>
           <AboutV2
+          main_color={portfolio.main_color}
             infor={{
               name: portfolio.full_name,
               career: portfolio.career,
               introduction: portfolio.introduction,
               avatar: portfolio.users.avatar,
-              main_color: portfolio.main_color,
+              
             }}
           ></AboutV2>
           <ExperienceV2
@@ -86,6 +88,7 @@ export default function Portfolio() {
             );
           })}
           <ContactV2
+          main_color={portfolio.main_color}
             infor={{
               phone: portfolio.phone,
               email: portfolio.email,

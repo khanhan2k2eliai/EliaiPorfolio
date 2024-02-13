@@ -41,7 +41,7 @@ export default function TextSpliter(props: TextProps) {
             {props.className != "" && (
               <motion.span
                 variants={item}
-                key={index+char}
+                key={index+char+Date.now}
                 className={`${oswald.className} ${props.className} ${styles.textSplit}`}
               >
                 {`${char}` }
@@ -51,7 +51,7 @@ export default function TextSpliter(props: TextProps) {
             (
               <motion.span
                 variants={item}
-                key={index+char}
+                key={index+char+Date.now}
                 className={`${oswald.className}`}
                 style={{
                   ...props.style,

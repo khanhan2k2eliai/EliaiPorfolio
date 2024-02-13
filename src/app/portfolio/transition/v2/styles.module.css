@@ -9,11 +9,10 @@
   font-size: 138px;
   font-weight: 100;
   line-height: 138px;
-  color: #2e2e2e;
   text-transform: uppercase;
   writing-mode: vertical-lr;
   transform: scale(-1);
-  opacity: 10%;
+  opacity: 50%;
 }
 .featuredContainer {
   display: flex;
@@ -32,7 +31,6 @@
     font-size: 193px;
     font-weight: 100;
     line-height: 138px;
-    color: #2e2e2e;
     opacity: 1;
   }
   .featuredContainer {

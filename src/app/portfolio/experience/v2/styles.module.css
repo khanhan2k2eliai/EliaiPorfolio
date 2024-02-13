@@ -26,11 +26,10 @@
   font-size: 120px;
   font-weight: 100;
   line-height: 138px;
-  color: #2e2e2e;
   text-transform: uppercase;
   writing-mode: vertical-lr;
   transform: scale(-1);
-  opacity: 0.1;
+  opacity: 0.5;
 }
 .listDate{
   display: grid;

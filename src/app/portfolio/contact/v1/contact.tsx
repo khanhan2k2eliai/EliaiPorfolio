@@ -13,6 +13,7 @@ interface contactProps {
     facebook: string;
     name: string;
   };
+  main_color:string;
 }
 export default function Contact(props: contactProps) {
   const list = {
@@ -69,6 +70,7 @@ export default function Contact(props: contactProps) {
                 delay: 0.02,
               }}
               className={styles.blackBar}
+              style={{backgroundColor:props.main_color}}
             ></motion.div>
           </div>
           <motion.img
@@ -104,8 +106,8 @@ export default function Contact(props: contactProps) {
         <div style={{ marginTop: "9%", marginLeft: "13%" }}>
           <div
             style={{
-              color: "#0F172A",
               marginBottom: "2%",
+              color:props.main_color
             }}
           >
             <TextSpliter value="Let's talk" className={`${oswald.className} ${styles.title}`} style={{}}></TextSpliter>
@@ -118,7 +120,7 @@ export default function Contact(props: contactProps) {
                 duration: 0.6,
                 delay: 0.02,
               }}
-              style={{ width: "25%", height: 5, backgroundColor: "#0F172A" }}
+              style={{ width: "25%", height: 5, backgroundColor: props.main_color }}
             ></motion.div>
           </div>
           <motion.div

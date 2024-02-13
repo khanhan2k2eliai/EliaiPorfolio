@@ -66,6 +66,7 @@ export default function ExperienceV2(props: experienceProps) {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
+            color:props.main_color
           }}
         >
           <TextSpliter
@@ -99,7 +100,7 @@ export default function ExperienceV2(props: experienceProps) {
                   </motion.div>
                   <motion.div
                     variants={citem}
-                    style={{ display: "grid", rowGap: 15, marginLeft: "2%" }}
+                    style={{ display: "grid", rowGap: 15, marginLeft: "2%" ,color:'#0F172A'}}
                   >
                     <p
                       style={{
@@ -141,6 +142,7 @@ export default function ExperienceV2(props: experienceProps) {
           delay: 0.02,
         }}
         className={styles.portfolioContainer}
+        style={{color:props.main_color}}
       >
         <p className={styles.portfolio}>experience</p>
       </motion.div>

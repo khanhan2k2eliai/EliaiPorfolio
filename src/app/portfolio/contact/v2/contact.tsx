@@ -16,6 +16,7 @@ interface contactProps {
     facebook: string;
     name: string;
   };
+  main_color:string;
 }
 export default function ContactV2(props: contactProps) {
   const list = {
@@ -63,7 +64,7 @@ export default function ContactV2(props: contactProps) {
             gridTemplateRows: "repeat(12,8%)",
           }}
         >
-          <div className={styles.blackLayer}></div>
+          <div className={styles.blackLayer} style={{backgroundColor:props.main_color}}></div>
           <img
             style={{
               height: "100%",
@@ -83,16 +84,16 @@ export default function ContactV2(props: contactProps) {
             justifyContent: "space-around",
           }}
         >
-          <div>
+          <div style={{color:props.main_color}}>
             <TextSpliter
               value="Let's Talk"
               className={`${oswald.className} ${styles.header}`}
               style={{}}
             ></TextSpliter>
             <motion.div
-              whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
+               whileInView={{
+                opacity: [0, 1],
+                translateY: [50, 0],
               }}
               transition={{
                 duration: 0.6,
@@ -101,14 +102,14 @@ export default function ContactV2(props: contactProps) {
               style={{
                 width: "50%",
                 height: 5,
-                backgroundColor: "#0F172A",
+                backgroundColor: props.main_color,
                 marginBottom: "10%",
               }}
             ></motion.div>
             <motion.div
               whileInView={{
-                opacity: [0, 0.75, 1],
-                translateY: [50, 25, 20, 15, 10, 5, 0],
+                opacity: [0, 1],
+                translateY: [50, 0],
               }}
               transition={{
                 duration: 0.6,
@@ -173,8 +174,8 @@ export default function ContactV2(props: contactProps) {
           <motion.div
             className={styles.more}
             whileInView={{
-              opacity: [0, 0.75, 1],
-              translateY: [50, 25, 20, 15, 10, 5, 0],
+              opacity: [0, 1],
+              translateY: [50, 0],
             }}
             transition={{
               duration: 0.6,
@@ -206,7 +207,7 @@ export default function ContactV2(props: contactProps) {
         }}
         className={styles.featuredContainer}
       >
-        <p className={styles.featured}>Let's Talk</p>
+        <p className={styles.featured} style={{color:props.main_color}}>Let's Talk</p>
       </motion.div>
     </div>
   );

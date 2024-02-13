@@ -55,7 +55,7 @@ export default function ProjectV2(props: projectProps) {
         >
           <div
             style={{
-              color: "#2E2E2E",
+              color: props.main_color,
               display: "flex",
               flexDirection: "column",
               alignItems:
@@ -69,7 +69,7 @@ export default function ProjectV2(props: projectProps) {
             <p
               style={{
                 fontSize: 16,
-                color: "#0F172A",
+                color: props.main_color,
                 textTransform: "uppercase",
                 fontWeight: 700,
               }}
@@ -84,7 +84,7 @@ export default function ProjectV2(props: projectProps) {
             style={{
               width: "90%",
               height: 4,
-              backgroundColor: "#2E2E2E",
+              backgroundColor: props.main_color,
               marginTop: "15%",
             }}
           ></div>

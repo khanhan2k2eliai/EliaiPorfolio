@@ -136,6 +136,7 @@ export default function TransitionV2(props: transitionProps) {
           delay: 0.02,
         }}
         className={styles.featuredContainer}
+        style={{color:props.main_color}}
       >
         <p className={`${styles.featured} ${inter.className}`}>featured</p>
       </motion.div>
@@ -165,6 +166,7 @@ export default function TransitionV2(props: transitionProps) {
               alignItems: "flex-start",
               justifyContent: "center",
               marginLeft: "13%",
+              color:props.main_color
             }}
           >
             <motion.p
@@ -177,7 +179,7 @@ export default function TransitionV2(props: transitionProps) {
                 delay: 0.02,
               }}
               className={`${oswald.className}`}
-              style={{ fontWeight: "200", fontSize: 30 }}
+              style={{ fontWeight: "200", fontSize: 30 ,color:'#0F172A'}}
             >
               các
             </motion.p>
@@ -196,7 +198,7 @@ export default function TransitionV2(props: transitionProps) {
                 delay: 0.02,
               }}
               className={`${oswald.className}`}
-              style={{ fontWeight: "200", fontSize: 30 }}
+              style={{ fontWeight: "200", fontSize: 30,color:'#0F172A' }}
             >
               Đã làm
             </motion.p>

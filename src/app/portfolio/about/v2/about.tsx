@@ -12,8 +12,8 @@ interface aboutProps {
     career: string;
     introduction: string;
     avatar: string;
-    main_color: string;
   };
+  main_color: string;
 }
 export default function AboutV2(props: aboutProps) {
   const { firstName, lastName } = splitFullName(props.infor.name);
@@ -52,6 +52,15 @@ export default function AboutV2(props: aboutProps) {
             duration: 0.6,
             delay: 0.02,
           }}
+          style={{
+            backgroundImage: `-webkit-linear-gradient(
+            left,
+            ${props.main_color},
+            ${props.main_color} 90%,
+            transparent 80%,
+            transparent 100%
+          )`,
+          }}
         >
           <img
             style={{ height: "90%", aspectRatio: 0.75 }}
@@ -71,7 +80,7 @@ export default function AboutV2(props: aboutProps) {
         }}
       >
         <div className={styles.inforContainer}>
-          <div style={{ color: "#2E2E2E", marginLeft: "7%" }}>
+          <div style={{color:props.main_color , marginLeft: "7%" }}>
             <TextSpliter
               value={firstName}
               className=""
@@ -100,15 +109,15 @@ export default function AboutV2(props: aboutProps) {
                   duration: 0.6,
                   delay: 0.02,
                 }}
-                style={{ width: "40%", height: 4, backgroundColor: "#2E2E2E" }}
+                style={{ width: "100%", height: 4, backgroundColor:props.main_color }}
               ></motion.div>
               <TextSpliter
                 value={props.infor.career}
                 className=""
                 style={{
-                  marginLeft: "2%",
+                  marginLeft: "4%",
                   fontSize: 22,
-                  fontWeight: 200,
+                  fontWeight: 100,
                   color: "#0F172A",
                 }}
               ></TextSpliter>

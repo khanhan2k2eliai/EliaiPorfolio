@@ -8,7 +8,7 @@ export const portfolio = {
   facebook_link: "",
   introduction:
     "“Là một kiến trúc sư với 5 năm kinh nghiệm trong lĩnh vực thiết kế kiến trúc. Trải qua nhiều dự án đa dạng, tôi đã phát triển kỹ năng chuyên sâu trong việc tạo ra các không gian sống và làm việc sáng tạo, tích hợp các yếu tố estetica với sự tiện ích và bền vững. Sứ mệnh của tôi là tạo ra những công trình kiến trúc độc đáo và mang lại trải nghiệm tuyệt vời cho người sử dụng.”",
-  template_option: 1,
+  template_option: 2,
   main_color: "#4F8263",
   users: {
     avatar:
