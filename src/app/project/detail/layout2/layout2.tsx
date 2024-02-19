@@ -32,7 +32,7 @@ export default function Layout2(props: layoutProps) {
             opacity: [0, 1],
           }}
           transition={{
-            duration: 1.5,
+            duration: 2,
             delay: 0.02,
           }}
           style={{
@@ -65,7 +65,7 @@ export default function Layout2(props: layoutProps) {
           opacity: [0, 1],
         }}
         transition={{
-          duration: 1.5,
+          duration:2,
           delay: 0.02,
         }}
         style={{

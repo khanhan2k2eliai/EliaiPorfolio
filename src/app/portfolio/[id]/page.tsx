@@ -34,7 +34,7 @@ export default function Portfolio({ params }: { params: { id: number } }) {
     return (
       <>
         {targetPortfolio.template_option == 1 && (
-          <div style={{ backgroundColor: targetPortfolio.main_color + "10" }}>
+          <div style={{ backgroundColor: targetPortfolio.main_color + "30" }}>
             <About
               infor={{
                 name: targetPortfolio.full_name,
@@ -71,7 +71,7 @@ export default function Portfolio({ params }: { params: { id: number } }) {
                 name: targetPortfolio.full_name,
                 avatar:portfolio.users.avatar
               }}
-              main_color={portfolio.main_color}
+              main_color={targetPortfolio.main_color}
             ></Contact>
           </div>
         )}
@@ -112,7 +112,7 @@ export default function Portfolio({ params }: { params: { id: number } }) {
                 phone: targetPortfolio.phone,
                 email: targetPortfolio.email,
                 facebook: targetPortfolio.facebook_link,
-                avatar:targetPortfolio.users.avatar,
+                avatar:portfolio.users.avatar,
                 name: targetPortfolio.full_name,
               }}
             ></ContactV2>

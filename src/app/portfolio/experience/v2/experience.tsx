@@ -100,7 +100,7 @@ export default function ExperienceV2(props: experienceProps) {
                   </motion.div>
                   <motion.div
                     variants={citem}
-                    style={{ display: "grid", rowGap: 15, marginLeft: "2%" ,color:'#0F172A'}}
+                    style={{ display: "grid",gridAutoRows:'minmax(15px, max)', rowGap: 15, marginLeft: "2%" ,color:'#0F172A'}}
                   >
                     <p
                       style={{
