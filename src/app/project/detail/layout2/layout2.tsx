@@ -57,7 +57,7 @@ export default function Layout2(props: layoutProps) {
             delay: 0.02,
           }}
           style={{ width: "100%", height: "55%", marginBottom: "5%" }}
-          src={props.section.images[0]}
+          src={props.section.ProjectSectionImages[0]}
         ></motion.img>
       </div>
       <motion.div
@@ -76,7 +76,7 @@ export default function Layout2(props: layoutProps) {
       >
         <img
           style={{ height: "95%", width: "100%", marginBottom: "5%" }}
-          src={props.section.images[1]}
+          src={props.section.ProjectSectionImages[1]}
         ></img>
       </motion.div>
     </div>

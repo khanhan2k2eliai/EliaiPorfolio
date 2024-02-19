@@ -13,7 +13,6 @@ interface overviewProps {
   infor: {
     name: string;
     thumbnail: string;
-    introduction: string;
     infomation: Array<{ key: string; value: string }>;
   };
   main_color:string

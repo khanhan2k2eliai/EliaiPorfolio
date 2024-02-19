@@ -60,7 +60,7 @@ export default function Layout4(props: layoutProps) {
             delay: 0.02,
           }}
           style={{ width: "100%", height: "45%" }}
-          src={props.section.images[0]}
+          src={props.section.ProjectSectionImages[0]}
         ></motion.img>
       </div>
       <div
@@ -82,7 +82,7 @@ export default function Layout4(props: layoutProps) {
             delay: 0.02,
           }}
           style={{ width: "100%", height: "45%" }}
-          src={props.section.images[1]}
+          src={props.section.ProjectSectionImages[1]}
         ></motion.img>
         <div
           style={{
@@ -103,7 +103,7 @@ export default function Layout4(props: layoutProps) {
               delay: 0.02,
             }}
             style={{ width: "45%", height: "100%" }}
-            src={props.section.images[2]}
+            src={props.section.ProjectSectionImages[2]}
           ></motion.img>
           <motion.img
             whileInView={{
@@ -115,7 +115,7 @@ export default function Layout4(props: layoutProps) {
               delay: 0.02,
             }}
             style={{ width: "45%", height: "100%" }}
-            src={props.section.images[3]}
+            src={props.section.ProjectSectionImages[3]}
           ></motion.img>
         </div>
       </div>

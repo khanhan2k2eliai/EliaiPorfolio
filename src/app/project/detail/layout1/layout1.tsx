@@ -27,8 +27,8 @@ export default function Layout1(props: layoutProps) {
         style={{ gridRow: "1/8", gridColumn: "1/1" }}
       >
         <img
-          style={{ height: "100%", width: "100%" }}
-          src={props.section.images[0]}
+          style={{ height: "100%", width: "100%",objectFit:'fill' }}
+          src={props.section.ProjectSectionImages[0]}
         ></img>
       </motion.div>
       <div

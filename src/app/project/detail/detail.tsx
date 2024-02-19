@@ -12,7 +12,7 @@ import Layout4 from "./layout4/layout4";
 export interface projectSection {
   name: string;
   description: string;
-  images: Array<string>;
+  ProjectSectionImages: Array<string>;
 }
 interface detailProps {
   section: projectSection;
@@ -46,16 +46,16 @@ export default function Detail(props: detailProps) {
       )`,
       }}
     >
-      {props.section.images.length == 1 && (
+      {props.section.ProjectSectionImages.length == 1 && (
         <Layout1 main_color={props.main_color} section={props.section}></Layout1>
       )}
-      {props.section.images.length == 2 && (
+      {props.section.ProjectSectionImages.length == 2 && (
         <Layout2 main_color={props.main_color} section={props.section}></Layout2>
       )}
-      {props.section.images.length == 3 && (
+      {props.section.ProjectSectionImages.length == 3 && (
         <Layout3 main_color={props.main_color} section={props.section}></Layout3>
       )}
-      {props.section.images.length == 4 && (
+      {props.section.ProjectSectionImages.length == 4 && (
         <Layout4 main_color={props.main_color} section={props.section}></Layout4>
       )}
     </div>
