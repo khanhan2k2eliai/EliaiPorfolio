@@ -102,7 +102,11 @@ export default function Project(props: projectProps) {
             }}
             style={{
               backgroundColor: `hsla(${main_hsl?.h}, ${main_hsl?.s}%, ${
-                main_hsl?.l * 1.79
+                props.main_color == "#C2444F"
+                  ? main_hsl?.l * 1.79
+                  : props.main_color == "#4F8263"
+                  ? main_hsl?.l * 2.16
+                  : main_hsl?.l * 4.7 
               }%, 1)`,
               zIndex: 1,
             }}

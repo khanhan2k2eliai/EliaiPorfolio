@@ -73,7 +73,7 @@ export default function Layout1(props: layoutProps) {
             duration: 1.5,
             delay: 0.02,
           }}
-          style={{ width: "30%", marginRight: "2%" }}
+          style={{ width: "30%", marginRight: "2%",color:'#475569' }}
         >
           {props.section.description}
         </motion.p>
