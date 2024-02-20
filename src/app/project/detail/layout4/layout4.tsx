@@ -10,7 +10,7 @@ const oswald = Oswald({
 });
 interface layoutProps {
   section: projectSection;
-  main_color:string;
+  main_color: string;
 }
 export default function Layout4(props: layoutProps) {
   return (
@@ -28,6 +28,7 @@ export default function Layout4(props: layoutProps) {
         }}
       >
         <motion.div
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: [-50, 0],
@@ -45,12 +46,16 @@ export default function Layout4(props: layoutProps) {
             marginTop: "10%",
           }}
         >
-          <p className={`${oswald.className} ${styles.title}`} style={{color:props.main_color}}>{props.section.name}</p>
-          <p className={styles.description}>
-            {props.section.description}
+          <p
+            className={`${oswald.className} ${styles.title}`}
+            style={{ color: props.main_color }}
+          >
+            {props.section.name}
           </p>
+          <p className={styles.description}>{props.section.description}</p>
         </motion.div>
         <motion.img
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: [50, 0],
@@ -73,6 +78,7 @@ export default function Layout4(props: layoutProps) {
         }}
       >
         <motion.img
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: [50, 0],
@@ -94,6 +100,7 @@ export default function Layout4(props: layoutProps) {
           }}
         >
           <motion.img
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 1],
               translateY: [50, 0],
@@ -106,6 +113,7 @@ export default function Layout4(props: layoutProps) {
             src={props.section.ProjectSectionImages[2]}
           ></motion.img>
           <motion.img
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 1],
               translateY: [50, 0],

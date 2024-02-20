@@ -20,6 +20,7 @@ export default function AboutV2(props: aboutProps) {
   return (
     <div className={styles.container}>
       <motion.div
+      viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
           translateX: ["-30%", "0%"],
@@ -44,6 +45,7 @@ export default function AboutV2(props: aboutProps) {
       >
         <motion.div
           className={styles.blackLayer}
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: ["20%", "0%"],
@@ -101,6 +103,7 @@ export default function AboutV2(props: aboutProps) {
               }}
             >
               <motion.div
+              viewport={{ once: true }}
                 whileInView={{
                   opacity: [0, 1],
                   translateY: ["100%", "0%"],
@@ -130,6 +133,7 @@ export default function AboutV2(props: aboutProps) {
               className={`${inter.className} ${styles.introTitle}`}
             ></TextSpliter>
             <motion.p
+            viewport={{ once: true }}
               whileInView={{
                 opacity: [0, 1],
                 translateY: ["30%", "0%"],

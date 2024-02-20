@@ -10,7 +10,7 @@ const oswald = Oswald({
 });
 interface layoutProps {
   section: projectSection;
-  main_color:string;
+  main_color: string;
 }
 export default function Layout2(props: layoutProps) {
   return (
@@ -28,6 +28,7 @@ export default function Layout2(props: layoutProps) {
         }}
       >
         <motion.div
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
           }}
@@ -43,12 +44,16 @@ export default function Layout2(props: layoutProps) {
             justifyContent: "space-between",
           }}
         >
-          <p className={`${oswald.className} ${styles.title}`} style={{color:props.main_color}}>{props.section.name}</p>
-          <p className={styles.description}>
-            {props.section.description}
+          <p
+            className={`${oswald.className} ${styles.title}`}
+            style={{ color: props.main_color }}
+          >
+            {props.section.name}
           </p>
+          <p className={styles.description}>{props.section.description}</p>
         </motion.div>
         <motion.img
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
           }}
@@ -61,11 +66,12 @@ export default function Layout2(props: layoutProps) {
         ></motion.img>
       </div>
       <motion.div
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
         }}
         transition={{
-          duration:2,
+          duration: 2,
           delay: 0.02,
         }}
         style={{

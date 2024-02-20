@@ -3,7 +3,7 @@ import * as React from "react";
 import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
 const oswald = Oswald({
-  subsets: ["latin","vietnamese"],
+  subsets: ["latin", "vietnamese"],
   weight: ["200", "400", "500", "700"],
 });
 import { motion, useAnimationFrame } from "framer-motion";
@@ -32,9 +32,10 @@ export default function ProjectV2(props: projectProps) {
         }}
       >
         <motion.div
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
-            translateX: props.index %2 !=0 ?[-50, 0] : [50,0],
+            translateX: props.index % 2 != 0 ? [-50, 0] : [50, 0],
           }}
           transition={{
             duration: 0.6,
@@ -109,9 +110,10 @@ export default function ProjectV2(props: projectProps) {
           )}
         </motion.div>
         <motion.div
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
-            translateX: props.index %2 !=0 ?[50, 0] : [-50,0],
+            translateX: props.index % 2 != 0 ? [50, 0] : [-50, 0],
           }}
           transition={{
             duration: 0.6,

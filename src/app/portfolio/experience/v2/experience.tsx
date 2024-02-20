@@ -79,6 +79,7 @@ export default function ExperienceV2(props: experienceProps) {
             style={{}}
           ></TextSpliter>
           <motion.div
+            viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
             variants={list}
@@ -88,6 +89,7 @@ export default function ExperienceV2(props: experienceProps) {
               return (
                 <motion.div
                   initial="hidden"
+                  viewport={{ once: true }}
                   whileInView="visible"
                   variants={list}
                   key={index}
@@ -147,6 +149,7 @@ export default function ExperienceV2(props: experienceProps) {
         </div>
       </div>
       <motion.div
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
           translateX: ["30%", "0%"],

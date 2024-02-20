@@ -3,12 +3,15 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import { motion } from "framer-motion";
 import { Oswald } from "next/font/google";
-import { hexToHSL,hexToCssHsl } from "@/utils/hex-to-hsl";
-const oswald = Oswald({ subsets: ["latin","vietnamese"], weight: ["500", "700"] });
+import { hexToHSL, hexToCssHsl } from "@/utils/hex-to-hsl";
+const oswald = Oswald({
+  subsets: ["latin", "vietnamese"],
+  weight: ["500", "700"],
+});
 
 interface projectProps {
   index: number;
-  main_color:string;
+  main_color: string;
   infor: {
     name: string;
     thumbnail: string;
@@ -16,9 +19,9 @@ interface projectProps {
   };
 }
 export default function Project(props: projectProps) {
-  const main_hsl =hexToCssHsl(props.main_color);
+  const main_hsl = hexToCssHsl(props.main_color);
   return (
-    <div className={styles.container}  >
+    <div className={styles.container}>
       <div
         style={{
           height: "90%",
@@ -33,6 +36,7 @@ export default function Project(props: projectProps) {
               color: "#0F172A",
               marginBottom: "2%",
             }}
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 1],
               translateX: [-100, 0],
@@ -50,22 +54,27 @@ export default function Project(props: projectProps) {
                 textTransform: "uppercase",
               }}
             >
-             {props.infor.name}
+              {props.infor.name}
             </p>
             <div
-              style={{ width: "26%", height: 5, backgroundColor: props.main_color }}
+              style={{
+                width: "26%",
+                height: 5,
+                backgroundColor: props.main_color,
+              }}
             ></div>
           </motion.div>
         )}
         <motion.div
-        whileInView={{
-          opacity: [0, 1],
-          translateX: [-100, 0],
-        }}
-        transition={{
-          duration: 2,
-          delay: 0.02,
-        }}
+          viewport={{ once: true }}
+          whileInView={{
+            opacity: [0, 1],
+            translateX: [-100, 0],
+          }}
+          transition={{
+            duration: 2,
+            delay: 0.02,
+          }}
           style={{
             width: "100%",
             height: "80%",
@@ -82,6 +91,7 @@ export default function Project(props: projectProps) {
             className={
               props.index != 1 ? styles.floatElement : styles.FfloatElement
             }
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 1],
               translateX: [100, 0],
@@ -90,7 +100,12 @@ export default function Project(props: projectProps) {
               duration: 2,
               delay: 0.02,
             }}
-            style={{backgroundColor:`hsla(${main_hsl?.h}, ${main_hsl?.s}%, ${main_hsl?.l*1.79}%, 1)`,zIndex:1}}
+            style={{
+              backgroundColor: `hsla(${main_hsl?.h}, ${main_hsl?.s}%, ${
+                main_hsl?.l * 1.79
+              }%, 1)`,
+              zIndex: 1,
+            }}
           >
             {props.index == 1 && (
               <div className={styles.floatText}>
@@ -114,28 +129,27 @@ export default function Project(props: projectProps) {
                     }}
                   ></div>
                 </div>
-                <p style={{color:'#475569'}}>
-                 {props.infor.introduction}
-                </p>
+                <p style={{ color: "#475569" }}>{props.infor.introduction}</p>
               </div>
             )}
             {props.index != 1 && (
-              <p className={styles.floatText} style={{color:'#475569'}}>
-               {props.infor.introduction}
+              <p className={styles.floatText} style={{ color: "#475569" }}>
+                {props.infor.introduction}
               </p>
             )}
           </motion.div>
         </motion.div>
         {props.index % 2 == 0 && (
           <motion.div
-          whileInView={{
-            opacity: [0, 1],
-            translateX: [-100, 0],
-          }}
-          transition={{
-            duration: 2,
-            delay: 0.02,
-          }}
+            viewport={{ once: true }}
+            whileInView={{
+              opacity: [0, 1],
+              translateX: [-100, 0],
+            }}
+            transition={{
+              duration: 2,
+              delay: 0.02,
+            }}
             style={{
               color: "#0F172A",
               marginTop: "2%",
@@ -152,7 +166,11 @@ export default function Project(props: projectProps) {
               {props.infor.name}
             </p>
             <div
-              style={{ width: "26%", height: 5, backgroundColor: props.main_color}}
+              style={{
+                width: "26%",
+                height: 5,
+                backgroundColor: props.main_color,
+              }}
             ></div>
           </motion.div>
         )}

@@ -23,7 +23,9 @@ interface experienceProps {
 export default function Experience(props: experienceProps) {
   const [showContent, setShowContent] = React.useState(false);
   const bgRef = React.useRef<HTMLDivElement>(null);
-  const isInView = useInView(bgRef);
+  const divRef = React.useRef<HTMLDivElement>(null);
+  const divInView = useInView(divRef, { once: false });
+  const isInView = useInView(bgRef, { once: true });
   React.useEffect(() => {
     setShowContent(false);
   }, [isInView]);
@@ -56,8 +58,8 @@ export default function Experience(props: experienceProps) {
   return (
     <>
       <motion.div
-        ref={bgRef}
         className={styles.background}
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
         }}
@@ -68,6 +70,7 @@ export default function Experience(props: experienceProps) {
       >
         {!showContent && (
           <motion.div
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 1],
               height: ["100%", "0%"],
@@ -108,6 +111,7 @@ export default function Experience(props: experienceProps) {
             >
               <motion.p
                 initial="hidden"
+                viewport={{ once: true }}
                 whileInView="visible"
                 variants={list}
                 className={`${oswald.className} ${styles.verticalText}`}
@@ -158,6 +162,7 @@ export default function Experience(props: experienceProps) {
               </motion.p>
               {/* <TextSpliter value="KINH NGHIỆM LÀM VIỆC" className={`${oswald.className} ${styles.verticalText}`} style={{}}></TextSpliter> */}
               <motion.div
+                viewport={{ once: true }}
                 whileInView={{
                   opacity: [0, 1],
                   translateY: ["-40%", "0%"],
@@ -205,6 +210,7 @@ export default function Experience(props: experienceProps) {
                       }}
                     >
                       <motion.div
+                        viewport={{ once: true }}
                         whileInView={{
                           opacity: [0, 1],
                           translateY: ["40%", "0%"],
@@ -233,6 +239,7 @@ export default function Experience(props: experienceProps) {
                           style={{ fontSize: 16, fontWeight: "700" }}
                         ></TextSpliter>
                         <motion.ul
+                          viewport={{ once: true }}
                           initial="hidden"
                           whileInView="visible"
                           variants={list}
@@ -255,10 +262,15 @@ export default function Experience(props: experienceProps) {
                 })}
               </div>
               <motion.div
-                whileInView={{
-                  opacity: [0, 1],
-                  translateY: ["40%", "0%"],
-                }}
+                viewport={{ once: true }}
+                whileInView={
+                  !divInView
+                    ? {
+                        opacity: [0, 1],
+                        translateY: ["40%", "0%"],
+                      }
+                    : {}
+                }
                 transition={{
                   duration: 0.6,
                   delay: 0.02,

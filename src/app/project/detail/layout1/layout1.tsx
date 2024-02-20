@@ -16,6 +16,7 @@ export default function Layout1(props: layoutProps) {
   return (
     <div className={styles.layout1}>
       <motion.div
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
           translateY: [-50, 0],
@@ -43,6 +44,7 @@ export default function Layout1(props: layoutProps) {
         }}
       >
         <motion.p
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: [50, 0],
@@ -62,6 +64,7 @@ export default function Layout1(props: layoutProps) {
           {props.section.name}
         </motion.p>
         <motion.p
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: [50, 0],

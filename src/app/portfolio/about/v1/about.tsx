@@ -2,12 +2,18 @@
 
 import * as React from "react";
 import styles from "./styles.module.css";
-import { Oswald,Inter } from "next/font/google";
+import { Oswald, Inter } from "next/font/google";
 import TextSpliter from "@/components/text-spliter/TextSpliter";
 import { splitFullName } from "@/utils/split-fullname";
 import { motion } from "framer-motion";
-const oswald = Oswald({ subsets: ["latin","vietnamese"], weight: ["500","400", "700"] });
-const inter = Inter({ subsets: ["latin","vietnamese","latin-ext"], weight: ["500","400", "700"] })
+const oswald = Oswald({
+  subsets: ["latin", "vietnamese"],
+  weight: ["500", "400", "700"],
+});
+const inter = Inter({
+  subsets: ["latin", "vietnamese", "latin-ext"],
+  weight: ["500", "400", "700"],
+});
 interface aboutProps {
   infor: {
     name: string;
@@ -32,6 +38,7 @@ export default function About(props: aboutProps) {
         }}
       >
         <motion.div
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: ["5%", "0%"],
@@ -78,6 +85,7 @@ export default function About(props: aboutProps) {
               }}
             >
               <motion.div
+                viewport={{ once: true }}
                 whileInView={{
                   opacity: [0, 0.75, 1],
                   translateY: [50, 25, 20, 15, 10, 5, 0],
@@ -100,7 +108,7 @@ export default function About(props: aboutProps) {
                   fontSize: 24,
                   fontWeight: 200,
                   textTransform: "uppercase",
-                  color:'#0F172A'
+                  color: "#0F172A",
                 }}
               ></TextSpliter>
             </motion.div>
@@ -112,6 +120,7 @@ export default function About(props: aboutProps) {
               style={{}}
             ></TextSpliter>
             <motion.p
+              viewport={{ once: true }}
               whileInView={{
                 opacity: [0, 1],
                 translateY: ["30%", "0%"],
@@ -134,6 +143,7 @@ export default function About(props: aboutProps) {
       </div>
       <div style={{ borderRightWidth: 1, height: "100%" }}>
         <motion.img
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: ["30%", "0%"],

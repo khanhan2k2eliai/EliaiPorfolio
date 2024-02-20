@@ -1,13 +1,16 @@
 "use client";
 import * as React from "react";
 import styles from "./styles.module.css";
-import { Oswald,Inter } from "next/font/google";
+import { Oswald, Inter } from "next/font/google";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 const oswald = Oswald({
-  subsets: ["latin","vietnamese"],
+  subsets: ["latin", "vietnamese"],
   weight: ["200", "400", "500", "700"],
 });
-const inter = Inter({ subsets: ["latin","vietnamese"], weight: ["200","400", "700","100"] })
+const inter = Inter({
+  subsets: ["latin", "vietnamese"],
+  weight: ["200", "400", "700", "100"],
+});
 console.log(oswald);
 import TextSpliter from "@/components/text-spliter/TextSpliter";
 import { motion, useAnimationFrame } from "framer-motion";
@@ -51,6 +54,7 @@ export default function ContactV2(props: contactProps) {
         }}
       >
         <motion.div
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
             translateY: [100, 0],
@@ -97,6 +101,7 @@ export default function ContactV2(props: contactProps) {
               style={{}}
             ></TextSpliter>
             <motion.div
+              viewport={{ once: true }}
               whileInView={{
                 opacity: [0, 1],
                 translateY: [50, 0],
@@ -113,6 +118,7 @@ export default function ContactV2(props: contactProps) {
               }}
             ></motion.div>
             <motion.div
+              viewport={{ once: true }}
               whileInView={{
                 opacity: [0, 1],
                 translateY: [50, 0],
@@ -128,6 +134,7 @@ export default function ContactV2(props: contactProps) {
               }}
             >
               <motion.div
+                viewport={{ once: true }}
                 initial="hidden"
                 whileInView="visible"
                 variants={list}
@@ -149,6 +156,7 @@ export default function ContactV2(props: contactProps) {
                 <motion.p variants={item}>Facebook</motion.p>
               </motion.div>
               <motion.div
+                viewport={{ once: true }}
                 initial="hidden"
                 whileInView="visible"
                 variants={list}
@@ -169,7 +177,7 @@ export default function ContactV2(props: contactProps) {
                 </motion.p>
                 <motion.a
                   href={props.infor.facebook}
-                  style={{ textDecoration: "underline",color: "#2E2E2E" }}
+                  style={{ textDecoration: "underline", color: "#2E2E2E" }}
                   variants={item}
                 >
                   {props.infor.name}
@@ -179,6 +187,7 @@ export default function ContactV2(props: contactProps) {
           </div>
 
           <motion.div
+            viewport={{ once: true }}
             className={styles.more}
             whileInView={{
               opacity: [0, 1],
@@ -203,6 +212,7 @@ export default function ContactV2(props: contactProps) {
         </div>
       </div>
       <motion.div
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
           translateX: [50, 0],
@@ -213,7 +223,10 @@ export default function ContactV2(props: contactProps) {
         }}
         className={styles.featuredContainer}
       >
-        <p className={`${styles.featured} ${inter.className}`} style={{ color: props.main_color }}>
+        <p
+          className={`${styles.featured} ${inter.className}`}
+          style={{ color: props.main_color }}
+        >
           Let's Talk
         </p>
       </motion.div>

@@ -10,7 +10,7 @@ const oswald = Oswald({
 });
 interface layoutProps {
   section: projectSection;
-  main_color:string;
+  main_color: string;
 }
 export default function Layout3(props: layoutProps) {
   return (
@@ -25,6 +25,7 @@ export default function Layout3(props: layoutProps) {
         }}
       >
         <motion.img
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
           }}
@@ -36,6 +37,7 @@ export default function Layout3(props: layoutProps) {
           src={props.section.ProjectSectionImages[0]}
         ></motion.img>
         <motion.img
+          viewport={{ once: true }}
           whileInView={{
             opacity: [0, 1],
           }}
@@ -60,13 +62,14 @@ export default function Layout3(props: layoutProps) {
         }}
       >
         <motion.img
-         whileInView={{
-          opacity: [0, 1],
-        }}
-        transition={{
-          duration: 1,
-          delay: 0.02,
-        }}
+          viewport={{ once: true }}
+          whileInView={{
+            opacity: [0, 1],
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.02,
+          }}
           style={{ width: "100%", height: "60%" }}
           src={props.section.ProjectSectionImages[2]}
         ></motion.img>
@@ -81,6 +84,7 @@ export default function Layout3(props: layoutProps) {
           }}
         >
           <motion.p
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 1],
             }}
@@ -89,11 +93,12 @@ export default function Layout3(props: layoutProps) {
               delay: 0.02,
             }}
             className={`${oswald.className} ${styles.title}`}
-            style={{color:props.main_color}}
+            style={{ color: props.main_color }}
           >
             {props.section.name}
           </motion.p>
           <motion.p
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 1],
             }}
@@ -103,7 +108,7 @@ export default function Layout3(props: layoutProps) {
             }}
             className={styles.description}
           >
-           {props.section.description}
+            {props.section.description}
           </motion.p>
         </div>
       </div>

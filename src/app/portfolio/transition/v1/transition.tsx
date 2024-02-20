@@ -7,17 +7,17 @@ import { motion } from "framer-motion";
 import { Ref } from "react";
 import { Oswald, Inter } from "next/font/google";
 const oswald = Oswald({
-  subsets: ["latin","vietnamese"],
+  subsets: ["latin", "vietnamese"],
   weight: ["200", "400", "500", "700"],
 });
 const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "400", "500", "700"],
 });
-interface transitionProps{
-  main_color:string
+interface transitionProps {
+  main_color: string;
 }
-export default function Transition(props:transitionProps) {
+export default function Transition(props: transitionProps) {
   const Transition1Image = React.forwardRef(
     (props, ref: Ref<HTMLImageElement | null>) => (
       <Image
@@ -45,8 +45,9 @@ export default function Transition(props:transitionProps) {
     forwardMotionProps: true,
   });
   return (
-    <div className={styles.container} >
+    <div className={styles.container}>
       <MotionTransition1Image
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
           translateX: [-300, 0],
@@ -64,6 +65,7 @@ export default function Transition(props:transitionProps) {
           width: "100%",
           height: "80%",
         }}
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
           translateY: [-100, 0],
@@ -81,8 +83,8 @@ export default function Transition(props:transitionProps) {
             alignItems: "flex-start",
             justifyContent: "center",
             marginLeft: "13%",
-            width:'65%',
-            borderRight: "1px groove "+props.main_color,
+            width: "65%",
+            borderRight: "1px groove " + props.main_color,
           }}
         >
           <div
@@ -90,24 +92,44 @@ export default function Transition(props:transitionProps) {
               alignSelf: "flex-end",
               width: "95%",
               aspectRatio: 20,
-              borderTop: "1px groove "+props.main_color,
+              borderTop: "1px groove " + props.main_color,
               borderLeft: "1px groove " + props.main_color,
             }}
           ></div>
-          <p  className={`${styles.header}`} style={{ fontWeight: "300", fontSize: 30,color:'#475569',marginTop:'2%' }}>CÁC</p>
+          <p
+            className={`${styles.header}`}
+            style={{
+              fontWeight: "300",
+              fontSize: 30,
+              color: "#475569",
+              marginTop: "2%",
+            }}
+          >
+            CÁC
+          </p>
           <p
             className={`${styles.header} ${oswald.className}`}
-            style={{color:props.main_color}}
+            style={{ color: props.main_color }}
           >
             Dự án nổi bật
           </p>
-          <p className={`${styles.header}`} style={{ fontWeight: "300", fontSize: 30,color:'#475569',marginBottom:'2%' }}>ĐÃ LÀM</p>
+          <p
+            className={`${styles.header}`}
+            style={{
+              fontWeight: "300",
+              fontSize: 30,
+              color: "#475569",
+              marginBottom: "2%",
+            }}
+          >
+            ĐÃ LÀM
+          </p>
           <div
             style={{
               alignSelf: "flex-end",
               width: "95%",
               aspectRatio: 20,
-              borderBottom: "1px groove "+props.main_color,
+              borderBottom: "1px groove " + props.main_color,
               borderLeft: "1px groove " + props.main_color,
             }}
           ></div>
@@ -115,6 +137,7 @@ export default function Transition(props:transitionProps) {
       </motion.div>
 
       <MotionTransition2Image
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
           translateX: [200, 0],

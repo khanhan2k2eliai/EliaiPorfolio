@@ -10,11 +10,11 @@ import union5 from "../../../../../public/union5.png";
 import Image from "next/image";
 import TextSpliter from "@/components/text-spliter/TextSpliter";
 const oswald = Oswald({
-  subsets: ["latin","vietnamese"],
+  subsets: ["latin", "vietnamese"],
   weight: ["200", "400", "500", "700"],
 });
 const inter = Inter({
-  subsets: ["latin","vietnamese"],
+  subsets: ["latin", "vietnamese"],
   weight: ["100", "200", "400", "500", "700"],
 });
 import { motion, useAnimationFrame } from "framer-motion";
@@ -127,6 +127,7 @@ export default function TransitionV2(props: transitionProps) {
   return (
     <div className={styles.container}>
       <motion.div
+        viewport={{ once: true }}
         whileInView={{
           opacity: [0, 1],
           translateX: ["-30%", "0%"],
@@ -136,7 +137,7 @@ export default function TransitionV2(props: transitionProps) {
           delay: 0.02,
         }}
         className={styles.featuredContainer}
-        style={{color:props.main_color}}
+        style={{ color: props.main_color }}
       >
         <p className={`${styles.featured} ${inter.className}`}>featured</p>
       </motion.div>
@@ -166,10 +167,11 @@ export default function TransitionV2(props: transitionProps) {
               alignItems: "flex-start",
               justifyContent: "center",
               marginLeft: "13%",
-              color:props.main_color
+              color: props.main_color,
             }}
           >
             <motion.p
+              viewport={{ once: true }}
               whileInView={{
                 opacity: [0, 1],
                 translateY: ["30%", "0%"],
@@ -179,7 +181,7 @@ export default function TransitionV2(props: transitionProps) {
                 delay: 0.02,
               }}
               className={`${oswald.className}`}
-              style={{ fontWeight: "200", fontSize: 30 ,color:'#0F172A'}}
+              style={{ fontWeight: "200", fontSize: 30, color: "#0F172A" }}
             >
               các
             </motion.p>
@@ -189,6 +191,7 @@ export default function TransitionV2(props: transitionProps) {
               style={{}}
             ></TextSpliter>
             <motion.p
+              viewport={{ once: true }}
               whileInView={{
                 opacity: [0, 1],
                 translateY: ["30%", "0%"],
@@ -198,7 +201,7 @@ export default function TransitionV2(props: transitionProps) {
                 delay: 0.02,
               }}
               className={`${oswald.className}`}
-              style={{ fontWeight: "200", fontSize: 30,color:'#0F172A' }}
+              style={{ fontWeight: "200", fontSize: 30, color: "#0F172A" }}
             >
               Đã làm
             </motion.p>
@@ -211,6 +214,7 @@ export default function TransitionV2(props: transitionProps) {
               justifyContent: "center",
               marginLeft: "15%",
             }}
+            viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
             variants={list}

@@ -4,7 +4,10 @@ import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
 import { motion } from "framer-motion";
 import TextSpliter from "@/components/text-spliter/TextSpliter";
-const oswald = Oswald({ subsets: ["latin",'vietnamese'], weight: ["500", "700"] });
+const oswald = Oswald({
+  subsets: ["latin", "vietnamese"],
+  weight: ["500", "700"],
+});
 
 interface contactProps {
   infor: {
@@ -12,9 +15,9 @@ interface contactProps {
     email: string;
     facebook: string;
     name: string;
-    avatar:string;
+    avatar: string;
   };
-  main_color:string;
+  main_color: string;
 }
 export default function Contact(props: contactProps) {
   const list = {
@@ -62,6 +65,7 @@ export default function Contact(props: contactProps) {
             }}
           >
             <motion.div
+              viewport={{ once: true }}
               whileInView={{
                 opacity: [0, 1],
                 translateY: ["30%", "0%"],
@@ -71,10 +75,11 @@ export default function Contact(props: contactProps) {
                 delay: 0.02,
               }}
               className={styles.blackBar}
-              style={{backgroundColor:props.main_color}}
+              style={{ backgroundColor: props.main_color }}
             ></motion.div>
           </div>
           <motion.img
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 1],
               translateY: ["30%", "0%"],
@@ -106,11 +111,16 @@ export default function Contact(props: contactProps) {
           <div
             style={{
               marginBottom: "2%",
-              color:props.main_color
+              color: props.main_color,
             }}
           >
-            <TextSpliter value="Let's talk" className={`${oswald.className} ${styles.title}`} style={{}}></TextSpliter>
+            <TextSpliter
+              value="Let's talk"
+              className={`${oswald.className} ${styles.title}`}
+              style={{}}
+            ></TextSpliter>
             <motion.div
+              viewport={{ once: true }}
               whileInView={{
                 opacity: [0, 0.75, 1],
                 translateY: [50, 25, 20, 15, 10, 5, 0],
@@ -119,10 +129,15 @@ export default function Contact(props: contactProps) {
                 duration: 0.6,
                 delay: 0.02,
               }}
-              style={{ width: "25%", height: 5, backgroundColor: props.main_color }}
+              style={{
+                width: "25%",
+                height: 5,
+                backgroundColor: props.main_color,
+              }}
             ></motion.div>
           </div>
           <motion.div
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 0.75, 1],
               translateY: [50, 25, 20, 15, 10, 5, 0],
@@ -138,6 +153,7 @@ export default function Contact(props: contactProps) {
             }}
           >
             <motion.div
+              viewport={{ once: true }}
               initial="hidden"
               whileInView="visible"
               variants={list}
@@ -160,6 +176,7 @@ export default function Contact(props: contactProps) {
             </motion.div>
             <motion.div
               initial="hidden"
+              viewport={{ once: true }}
               whileInView="visible"
               variants={list}
               style={{
@@ -177,13 +194,18 @@ export default function Contact(props: contactProps) {
               <motion.p style={{ marginBottom: 16 }} variants={item}>
                 {props.infor.email}
               </motion.p>
-              <motion.a  className={styles.link} variants={item} href={props.infor.facebook}>
+              <motion.a
+                className={styles.link}
+                variants={item}
+                href={props.infor.facebook}
+              >
                 {props.infor.name}
               </motion.a>
             </motion.div>
           </motion.div>
           <motion.div
             className={styles.more}
+            viewport={{ once: true }}
             whileInView={{
               opacity: [0, 0.75, 1],
               translateY: [50, 25, 20, 15, 10, 5, 0],
