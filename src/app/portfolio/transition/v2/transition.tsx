@@ -10,11 +10,11 @@ import union5 from "../../../../../public/union5.png";
 import Image from "next/image";
 import TextSpliter from "@/components/text-spliter/TextSpliter";
 const oswald = Oswald({
-  subsets: ["latin"],
+  subsets: ["latin","vietnamese"],
   weight: ["200", "400", "500", "700"],
 });
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin","vietnamese"],
   weight: ["100", "200", "400", "500", "700"],
 });
 import { motion, useAnimationFrame } from "framer-motion";

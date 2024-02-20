@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import { motion } from "framer-motion";
 import { Oswald } from "next/font/google";
 import { hexToHSL,hexToCssHsl } from "@/utils/hex-to-hsl";
-const oswald = Oswald({ subsets: ["latin"], weight: ["500", "700"] });
+const oswald = Oswald({ subsets: ["latin","vietnamese"], weight: ["500", "700"] });
 
 interface projectProps {
   index: number;
@@ -50,10 +50,10 @@ export default function Project(props: projectProps) {
                 textTransform: "uppercase",
               }}
             >
-              Vinhomes Ocean park
+             {props.infor.name}
             </p>
             <div
-              style={{ width: "26%", height: 5, backgroundColor: "#0F172A" }}
+              style={{ width: "26%", height: 5, backgroundColor: props.main_color }}
             ></div>
           </motion.div>
         )}
@@ -90,7 +90,7 @@ export default function Project(props: projectProps) {
               duration: 2,
               delay: 0.02,
             }}
-            style={{backgroundColor:`hsla(${main_hsl?.h}, ${main_hsl?.s}%, 91%, 1)`,zIndex:2}}
+            style={{backgroundColor:`hsla(${main_hsl?.h}, ${main_hsl?.s}%, ${main_hsl?.l*1.79}%, 1)`,zIndex:1}}
           >
             {props.index == 1 && (
               <div className={styles.floatText}>
@@ -104,7 +104,7 @@ export default function Project(props: projectProps) {
                   }}
                 >
                   <p className={`${oswald.className} ${styles.name}`}>
-                    Vinhomes Ocean park
+                    {props.infor.name}
                   </p>
                   <div
                     style={{
@@ -114,27 +114,14 @@ export default function Project(props: projectProps) {
                     }}
                   ></div>
                 </div>
-                <p>
-                  Dự án Residences at Harmony Square là một tác phẩm kiến trúc
-                  độc đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc hiện
-                  đại và yếu tố văn hóa địa phương. Thiết kế này mang lại sự hòa
-                  quyện giữa không gian sống hiện đại và bản sắc đặc trưng của
-                  cộng đồng. Dự án Residences at Harmony Square là một tác phẩm
-                  kiến trúc độc đáo nằm ở trung tâm thành phố, kết hợp giữa kiến
-                  trúc hiện đại và mang đậm yếu tố văn hóa địa phương.
+                <p style={{color:'#475569'}}>
+                 {props.infor.introduction}
                 </p>
               </div>
             )}
             {props.index != 1 && (
-              <p className={styles.floatText}>
-                Dự án Residences at Harmony Square là một tác phẩm kiến trúc độc
-                đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc hiện đại
-                và yếu tố văn hóa địa phương. Thiết kế này mang lại sự hòa quyện
-                giữa không gian sống hiện đại và bản sắc đặc trưng của cộng
-                đồng. Dự án Residences at Harmony Square là một tác phẩm kiến
-                trúc độc đáo nằm ở trung tâm thành phố, kết hợp giữa kiến trúc
-                hiện đại và mang đậm yếu tố văn hóa địa phương.ại và bản sắc đặc
-                trưng của cộng đồng.
+              <p className={styles.floatText} style={{color:'#475569'}}>
+               {props.infor.introduction}
               </p>
             )}
           </motion.div>
@@ -162,10 +149,10 @@ export default function Project(props: projectProps) {
                 textTransform: "uppercase",
               }}
             >
-              Vinhomes Ocean park
+              {props.infor.name}
             </p>
             <div
-              style={{ width: "26%", height: 5, backgroundColor: "#0F172A" }}
+              style={{ width: "26%", height: 5, backgroundColor: props.main_color}}
             ></div>
           </motion.div>
         )}

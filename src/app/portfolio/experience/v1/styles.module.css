@@ -1,6 +1,6 @@
 .background {
   background-image: url('../../../../../public/background.png');
-  height: 100vh;
+  height: 1080px;
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,7 +9,7 @@
   justify-content: flex-end;
 }
 .verticalText{
-  font-size: 46px;
+  font-size: 76px;
   font-weight: 500;
   writing-mode: vertical-lr;
   transform: scale(-1);

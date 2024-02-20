@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Ref } from "react";
 import { Oswald, Inter } from "next/font/google";
 const oswald = Oswald({
-  subsets: ["latin"],
+  subsets: ["latin","vietnamese"],
   weight: ["200", "400", "500", "700"],
 });
 const inter = Inter({

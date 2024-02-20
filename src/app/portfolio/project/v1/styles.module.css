@@ -25,6 +25,7 @@
   padding-bottom: 6%;
   max-width: 88%;
   text-align: justify;
+  color: #475569;
 }
 .name{
   font-size: 32px;
@@ -44,6 +45,7 @@
     padding-top: 8%;
     padding-left: 11%;
     max-width:70%;
+    color: #475569;
   }
   .name{
     font-size: 40px;

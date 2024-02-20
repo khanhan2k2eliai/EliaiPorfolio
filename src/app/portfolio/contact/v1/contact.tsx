@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
 import { motion } from "framer-motion";
 import TextSpliter from "@/components/text-spliter/TextSpliter";
-const oswald = Oswald({ subsets: ["latin"], weight: ["500", "700"] });
+const oswald = Oswald({ subsets: ["latin",'vietnamese'], weight: ["500", "700"] });
 
 interface contactProps {
   infor: {
@@ -177,9 +177,9 @@ export default function Contact(props: contactProps) {
               <motion.p style={{ marginBottom: 16 }} variants={item}>
                 {props.infor.email}
               </motion.p>
-              <motion.p style={{ textDecoration: "underline" }} variants={item}>
+              <motion.a  className={styles.link} variants={item} href={props.infor.facebook}>
                 {props.infor.name}
-              </motion.p>
+              </motion.a>
             </motion.div>
           </motion.div>
           <motion.div
@@ -200,7 +200,6 @@ export default function Contact(props: contactProps) {
                 fontSize: 20,
                 fontWeight: "500",
                 textTransform: "uppercase",
-                marginRight: "1%",
               }}
             ></TextSpliter>
             <OpenInNewIcon sx={{ fontSize: 30 }}></OpenInNewIcon>

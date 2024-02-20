@@ -3,7 +3,7 @@ import * as React from "react";
 import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
 const oswald = Oswald({
-  subsets: ["latin"],
+  subsets: ["latin","vietnamese"],
   weight: ["200", "400", "500", "700"],
 });
 import { motion, useAnimationFrame } from "framer-motion";

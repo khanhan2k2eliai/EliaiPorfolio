@@ -13,7 +13,7 @@ export async function GET(
     const portfolioRes = await supabase
       .from("Portfolios")
       .select(
-        "*,Projects(id,name,thumbnail)"
+        "*,Projects(id,name,thumbnail,information)"
       )
       .eq("id", id)
       .single();

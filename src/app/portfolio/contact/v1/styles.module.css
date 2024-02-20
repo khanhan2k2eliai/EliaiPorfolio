@@ -10,29 +10,36 @@
   width: 45px;
 }
 .thumbnail {
-    height: 90%;
-    aspect-ratio: 0.75;
+  height: 90%;
+  aspect-ratio: 0.75;
 }
-.more{
-    display: flex;
-    align-items:center;
-    justify-content: flex-start;
-    margin-top: 17%;
-    width: 35%;
+.more {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 17%;
+  width: 35%;
 }
-.title{
-    font-size: 68px;
-    font-weight: 500;
-    text-transform: uppercase;
+.title {
+  font-size: 68px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.link {
+  color: #2e2e2e;
+  text-decoration: underline;
+}
+.link :active {
+  color: #2e2e2e;
 }
 @media (min-width: 1720px) and (min-height: 900px) {
   .blackBar {
     width: 65px;
   }
-  .title{
+  .title {
     font-size: 104px;
   }
-  .more{
+  .more {
     margin-top: 22%;
-}
+  }
 }

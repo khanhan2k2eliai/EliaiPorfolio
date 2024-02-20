@@ -9,7 +9,7 @@
 .portfolioContainer {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   grid-column: 1/2;
   height: 100%;
 }
@@ -45,10 +45,18 @@
 }
 .intro {
   font-style: italic;
-  max-width: 54%;
+  max-width: 60%;
   color: #475569;
   margin-top: 2%;
-  font-size: 14px;
+  font-size: 16px;
+}
+.introTitle{
+  font-weight: 700;
+  font-size: 20px;
+}
+.introContainer{
+  color: #2E2E2E;
+  margin-left: 7%;
 }
 @media (min-width: 1840px) {
   .portfolio {

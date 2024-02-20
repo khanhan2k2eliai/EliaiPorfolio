@@ -1,11 +1,11 @@
 import * as React from "react";
 import styles from "./styles.module.css";
-import { Oswald } from "next/font/google";
+import { Oswald,Inter } from "next/font/google";
 import TextSpliter from "@/components/text-spliter/TextSpliter";
 import { motion } from "framer-motion";
 import { splitFullName } from "@/utils/split-fullname";
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
-
+const oswald = Oswald({ subsets: ["latin","vietnamese"], weight: ["200","400", "700"] });
+const inter = Inter({ subsets: ["latin","vietnamese"], weight: ["200","400", "700","100"] })
 interface aboutProps {
   infor: {
     name: string;
@@ -30,7 +30,7 @@ export default function AboutV2(props: aboutProps) {
         }}
         className={styles.portfolioContainer}
       >
-        <p className={styles.portfolio}>portfolio</p>
+        <p className={`${inter.className} ${styles.portfolio}`} style={{color:props.main_color}}>portfolio</p>
       </motion.div>
       <div
         style={{
@@ -126,8 +126,8 @@ export default function AboutV2(props: aboutProps) {
           <div style={{ color: "#2E2E2E", marginLeft: "7%" }}>
             <TextSpliter
               value="Giới thiệu"
-              className=""
-              style={{ fontSize: 20, fontWeight: "700" }}
+              style={{}}
+              className={`${inter.className} ${styles.introTitle}`}
             ></TextSpliter>
             <motion.p
               whileInView={{

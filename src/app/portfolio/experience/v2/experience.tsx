@@ -2,10 +2,14 @@
 
 import * as React from "react";
 import styles from "./styles.module.css";
-import { Oswald } from "next/font/google";
+import { Oswald, Inter } from "next/font/google";
 const oswald = Oswald({
   subsets: ["latin"],
   weight: ["200", "400", "500", "700"],
+});
+const inter = Inter({
+  subsets: ["latin", "vietnamese"],
+  weight: ["200", "400", "700", "100"],
 });
 import TextSpliter from "@/components/text-spliter/TextSpliter";
 import { motion, useAnimationFrame } from "framer-motion";
@@ -15,7 +19,7 @@ interface work_experience {
   position: string;
   start_at: string;
   company_name: string;
-  job_description: string;
+  job_description: Array<string>;
 }
 interface experienceProps {
   workExperiences: Array<work_experience>;
@@ -66,7 +70,7 @@ export default function ExperienceV2(props: experienceProps) {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            color:props.main_color
+            color: props.main_color,
           }}
         >
           <TextSpliter
@@ -100,7 +104,13 @@ export default function ExperienceV2(props: experienceProps) {
                   </motion.div>
                   <motion.div
                     variants={citem}
-                    style={{ display: "grid",gridAutoRows:'minmax(15px, max)', rowGap: 15, marginLeft: "2%" ,color:'#0F172A'}}
+                    style={{
+                      display: "grid",
+                      gridAutoRows: "minmax(15px, max)",
+                      rowGap: 15,
+                      marginLeft: "2%",
+                      color: "#0F172A",
+                    }}
                   >
                     <p
                       style={{
@@ -121,9 +131,13 @@ export default function ExperienceV2(props: experienceProps) {
                       {c.company_name}
                     </p>
                     <ul style={{ color: "#475569", marginLeft: "3%" }}>
-                      <li style={{ marginBottom: 10, width: "70%" }}>
-                        {c.job_description}
-                      </li>
+                      {c.job_description.map((c) => {
+                        return (
+                          <li style={{ marginBottom: 10, width: "70%" }}>
+                            {c}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </motion.div>
                 </motion.div>
@@ -142,9 +156,9 @@ export default function ExperienceV2(props: experienceProps) {
           delay: 0.02,
         }}
         className={styles.portfolioContainer}
-        style={{color:props.main_color}}
+        style={{ color: props.main_color }}
       >
-        <p className={styles.portfolio}>experience</p>
+        <p className={`${styles.portfolio} ${inter.className}`}>experience</p>
       </motion.div>
     </div>
   );

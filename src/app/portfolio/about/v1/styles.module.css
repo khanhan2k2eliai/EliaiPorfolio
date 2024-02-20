@@ -1,5 +1,5 @@
 .container {
-  max-height: 1080px;
+  min-height: 1080px;
   display: grid;
   grid-template-columns: 1fr minmax(800px, 5fr) 3fr;
 }
@@ -8,7 +8,7 @@
   aspect-ratio: 0.92;
 }
 .avatar {
-  width: 334px;
+  width: 184px;
   aspect-ratio: 0.75;
   margin-top: 10%;
 }
@@ -17,9 +17,17 @@
   flex-direction: column;
   justify-content: space-between;
   margin-top: 19%;
-  height: 70%;
+  height: 80%;
 }
-@media (min-width: 1840px) {
+.intro{
+  font-weight: 700;
+  font-size: 20px;
+}
+.introContainer{
+  color: #2E2E2E;
+  margin-left: 7%;
+}
+@media (min-width: 1040px) {
   .blackbox {
     width: 237px;
     aspect-ratio: 0.92;
@@ -31,5 +39,6 @@
   }
   .centerContainer{
     margin-top: 22%;
+    height: 80%;
   }
 }

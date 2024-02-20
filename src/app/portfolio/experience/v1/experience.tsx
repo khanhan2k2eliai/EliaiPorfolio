@@ -4,14 +4,17 @@ import * as React from "react";
 import styles from "./styles.module.css";
 import { Oswald } from "next/font/google";
 import TextSpliter from "@/components/text-spliter/TextSpliter";
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const oswald = Oswald({
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "700"],
+});
 import { motion, useInView } from "framer-motion";
 interface work_experience {
   end_at: string;
   position: string;
   start_at: string;
   company_name: string;
-  job_description: string;
+  job_description: Array<string>;
 }
 interface experienceProps {
   workExperiences: Array<work_experience>;
@@ -111,6 +114,7 @@ export default function Experience(props: experienceProps) {
               >
                 <motion.span
                   variants={item}
+                  className={`${oswald.className}`}
                   style={{ position: "relative", display: "inline-block" }}
                 >
                   KINH
@@ -122,9 +126,10 @@ export default function Experience(props: experienceProps) {
                 </motion.span>
                 <motion.span
                   variants={item}
+                  className={`${oswald.className}`}
                   style={{ position: "relative", display: "inline-block" }}
                 >
-                  NGHIỆM
+                  NGHIÊM
                 </motion.span>
                 <motion.span
                   style={{ position: "relative", display: "inline-block" }}
@@ -133,6 +138,7 @@ export default function Experience(props: experienceProps) {
                 </motion.span>
                 <motion.span
                   variants={item}
+                  className={`${oswald.className}`}
                   style={{ position: "relative", display: "inline-block" }}
                 >
                   LÀM
@@ -144,9 +150,10 @@ export default function Experience(props: experienceProps) {
                 </motion.span>
                 <motion.span
                   variants={item}
+                  className={`${oswald.className}`}
                   style={{ position: "relative", display: "inline-block" }}
                 >
-                  VIỆC
+                  VIÊC
                 </motion.span>
               </motion.p>
               {/* <TextSpliter value="KINH NGHIỆM LÀM VIỆC" className={`${oswald.className} ${styles.verticalText}`} style={{}}></TextSpliter> */}
@@ -183,8 +190,7 @@ export default function Experience(props: experienceProps) {
                   gridAutoRows: "auto",
                   rowGap: 15,
                   marginTop: "5%",
-                  marginLeft: "2%",
-                  overflowY: "auto",
+                  marginLeft: "4%",
                 }}
               >
                 {props.workExperiences.map((i, j) => {
@@ -199,14 +205,14 @@ export default function Experience(props: experienceProps) {
                       }}
                     >
                       <motion.div
-                       whileInView={{
-                        opacity: [0, 1],
-                        translateY: ["40%", "0%"],
-                      }}
-                      transition={{
-                        duration: 0.6,
-                        delay: 0.02,
-                      }}
+                        whileInView={{
+                          opacity: [0, 1],
+                          translateY: ["40%", "0%"],
+                        }}
+                        transition={{
+                          duration: 0.6,
+                          delay: 0.02,
+                        }}
                         style={{ color: "#475569", marginRight: "2%" }}
                       >
                         <p>
@@ -232,12 +238,16 @@ export default function Experience(props: experienceProps) {
                           variants={list}
                           style={{ color: "#475569", marginLeft: "3%" }}
                         >
-                          <motion.li
-                           variants={Hitem}
-                            style={{ marginBottom: 10 }}
-                          >
-                            {i.job_description}
-                          </motion.li>
+                          {i.job_description.map((c: any) => {
+                            return (
+                              <motion.li
+                                variants={Hitem}
+                                style={{ marginBottom: 10 }}
+                              >
+                                {c}
+                              </motion.li>
+                            );
+                          })}
                         </motion.ul>
                       </div>
                     </motion.div>

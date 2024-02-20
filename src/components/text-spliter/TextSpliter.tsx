@@ -9,7 +9,7 @@ import { Oswald } from "next/font/google";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from './styles.module.css';
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
+const oswald = Oswald({ subsets: ["latin","vietnamese"], weight: ["400", "700","300","200","500"] });
 export default function TextSpliter(props: TextProps) {
   const list = {
     visible: {

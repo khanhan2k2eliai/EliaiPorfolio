@@ -1,12 +1,14 @@
 "use client";
 import * as React from "react";
 import styles from "./styles.module.css";
-import { Oswald } from "next/font/google";
+import { Oswald,Inter } from "next/font/google";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 const oswald = Oswald({
-  subsets: ["latin"],
+  subsets: ["latin","vietnamese"],
   weight: ["200", "400", "500", "700"],
 });
+const inter = Inter({ subsets: ["latin","vietnamese"], weight: ["200","400", "700","100"] })
+console.log(oswald);
 import TextSpliter from "@/components/text-spliter/TextSpliter";
 import { motion, useAnimationFrame } from "framer-motion";
 interface contactProps {
@@ -15,9 +17,9 @@ interface contactProps {
     email: string;
     facebook: string;
     name: string;
-    avatar:string;
+    avatar: string;
   };
-  main_color:string;
+  main_color: string;
 }
 export default function ContactV2(props: contactProps) {
   const list = {
@@ -65,7 +67,10 @@ export default function ContactV2(props: contactProps) {
             gridTemplateRows: "repeat(12,8%)",
           }}
         >
-          <div className={styles.blackLayer} style={{backgroundColor:props.main_color}}></div>
+          <div
+            className={styles.blackLayer}
+            style={{ backgroundColor: props.main_color }}
+          ></div>
           <img
             style={{
               height: "100%",
@@ -85,14 +90,14 @@ export default function ContactV2(props: contactProps) {
             justifyContent: "space-around",
           }}
         >
-          <div style={{color:props.main_color}}>
+          <div style={{ color: props.main_color }}>
             <TextSpliter
               value="Let's Talk"
               className={`${oswald.className} ${styles.header}`}
               style={{}}
             ></TextSpliter>
             <motion.div
-               whileInView={{
+              whileInView={{
                 opacity: [0, 1],
                 translateY: [50, 0],
               }}
@@ -162,12 +167,13 @@ export default function ContactV2(props: contactProps) {
                 <motion.p style={{ marginBottom: 16 }} variants={item}>
                   {props.infor.email}
                 </motion.p>
-                <motion.p
-                  style={{ textDecoration: "underline" }}
+                <motion.a
+                  href={props.infor.facebook}
+                  style={{ textDecoration: "underline",color: "#2E2E2E" }}
                   variants={item}
                 >
                   {props.infor.name}
-                </motion.p>
+                </motion.a>
               </motion.div>
             </motion.div>
           </div>
@@ -189,7 +195,6 @@ export default function ContactV2(props: contactProps) {
                 fontSize: 20,
                 fontWeight: "500",
                 textTransform: "uppercase",
-                marginRight: "1%",
               }}
               className=""
             ></TextSpliter>
@@ -208,7 +213,9 @@ export default function ContactV2(props: contactProps) {
         }}
         className={styles.featuredContainer}
       >
-        <p className={styles.featured} style={{color:props.main_color}}>Let's Talk</p>
+        <p className={`${styles.featured} ${inter.className}`} style={{ color: props.main_color }}>
+          Let's Talk
+        </p>
       </motion.div>
     </div>
   );
